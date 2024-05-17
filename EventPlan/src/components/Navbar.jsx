@@ -3,6 +3,8 @@ import { Navbar as BootstrapNavbar, Nav } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Navbar.module.css";
 import Logo from "../assets/Logo.svg";
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
   const iconSize = "1.25rem";
 
