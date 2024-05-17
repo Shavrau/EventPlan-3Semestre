@@ -1,0 +1,40 @@
+.fixedTop {
+  position: fixed;
+  width: 100%;
+  height: 3.75rem;
+  top: 0;
+  z-index: 1030;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbarCustom {
+  background-color: #0d0013;
+  color: #ffffff;
+}
+
+.leftItems {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.logo {
+  width: 225px;
+  height: 50px;
+}
+
+.centerItem {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.rightItems {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
