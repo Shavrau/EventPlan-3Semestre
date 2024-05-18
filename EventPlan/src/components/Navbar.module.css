@@ -36,10 +36,30 @@
 .rightItems {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
 }
 
 .whiteIcon {
   color: #ffffff;
 }
 
+@media (max-width: 440px) {
+  .leftItems {
+    padding-left: 10px; 
+  }
+
+  .logo {
+    width: 200px;
+    height: 50px;
+  }
+
+  .rightItems {
+    padding-right: 10px;
+    /* Removendo o alinhamento à direita para que o ícone de pesquisa não desapareça */
+    justify-content: flex-start;
+  }
+
+  .navbarCustom {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
