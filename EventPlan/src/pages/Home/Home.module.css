@@ -1,0 +1,21 @@
+.carouselContainer img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Estilo para telas grandes */
+@media (min-width: 1360px) {
+  .carouselContainer img {
+    height: 480px;
+    width: 1360px;
+  }
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
