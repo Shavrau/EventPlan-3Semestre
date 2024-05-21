@@ -21,7 +21,7 @@ const About = () => {
           </div>
           <div className={styles.col}>
             <img src={rhian} alt="foto do membro do grupo Rhian" className={styles["foto-sobre"]} />
-            <div className={styles.Nome}>Rhian Mendes de Souza</div>
+            <div className={styles.Nome}>Rhian Mendes Souza</div>
             <img src={Cleston} alt="foto do membro do grupo Cleston" className={styles["foto-sobre"]} />
             <div className={styles.Nome}>Cleston Kenji Maruyama Tonooka</div>
           </div>
