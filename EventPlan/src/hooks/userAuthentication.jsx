@@ -1,102 +1,57 @@
-import { db } from '../firebase/config'
-import { getAuth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    signOut 
-} from 'firebase/auth'
-import { useState, useEffect } from 'react'
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { useState } from 'react';
 
 export const userAuthentication = () => {
-    const [error, setError] = useState(null)
-    const [loading, setLoading] = useState(null)
-    const [cancel, setCancel] = useState(false)
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [cancel, setCancel] = useState(false);
 
-    const auth = getAuth()
+    const auth = getAuth();
 
-    function checkCancel() {
+    const checkCancel = () => {
         if (cancel) {
-            return
+            return;
         }
-    }
+    };
 
-    async function createUser(data) {
-        checkCancel()
-
-        setLoading(true)
-        setError(null)
+    const createUser = async (data) => {
+        checkCancel();
+        setLoading(true);
+        setError(null);
 
         try {
-            const { user } = await createUserWithEmailAndPassword(auth, data.email, data.password)
+            const { user } = await createUserWithEmailAndPassword(auth, data.email, data.password);
 
             await updateProfile(user, {
                 displayName: data.displayName
-            })
+            });
 
-            setLoading(false)
+            setLoading(false);
 
-            return user
+            return user;
         } catch (error) {
-            console.error(error.message)
-            console.table(typeof error.message)
+            console.error(error.message);
 
-            let systemErrorMessage
+            let systemErrorMessage;
 
-            if (error.message.includes("Password")) {
-                systemErrorMessage = "A senha deve ter pelo menos 8 caracteres"
-            } else if (error.message.includes("email-already")) {
-                systemErrorMessage = "Email já cadastrado"
+            if (error.code === "auth/email-already-in-use") {
+                systemErrorMessage = "Email já cadastrado";
+            } else if (error.code === "auth/weak-password") {
+                systemErrorMessage = "Senha fraca";
             } else {
-                systemErrorMessage = "Ocorreu um erro, tente novamente mais tarde"
+                systemErrorMessage = "Erro ao criar usuário";
             }
 
-            setLoading(false)
-            setError(systemErrorMessage)
+            setLoading(false);
+            setError(systemErrorMessage);
         }
-    }
+    };
 
-    const logout = () => {
-        checkCancel()
-        signOut(auth)
-    }
-
-    const login = async (data) => {
-        checkCancel()
-
-        setLoading(true)
-        setError(null)
-
-
-        try {
-            await signInWithEmailAndPassword(auth, data.email, data.password)
-            setLoading(false)
-        } catch (error) {
-            console.error(error.message)
-            console.table(typeof error.message)
-
-            let systemErrorMessage
-
-            if (error.message.includes('invalid-login')) {
-                systemErrorMessage = 'Usuário não cadastrado'
-            } else if (error.message.includes('wrong-password')) {
-                systemErrorMessage = 'Nome ou senha incorretos'
-            } else {
-                systemErrorMessage = 'Ocorreu um erro, tente novamente mais tarde'
-            }
-
-            setLoading(false)
-            setError(systemErrorMessage)
-        }
-    }
-
-    useEffect(() => {
-        return () => setCancel(true)
-    }, [])
-    return{
+    return {
         auth,
         error,
         loading,
         createUser,
-        login,
-        logout
-    }
-}
+        setCancel
+    };
+};

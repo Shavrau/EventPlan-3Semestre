@@ -1,88 +1,92 @@
+import { userAuthentication } from '../../hooks/userAuthentication';
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useNavigate } from 'react-router-dom';
 import styles from './Register.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-  const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [displayName, setDisplayName] = useState('');
+  const [error, setError] = useState('');
+
+  const { createUser, error: authError, loading } = userAuthentication();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
+
+    const user = {
+      email,
+      password,
+      displayName
+    };
+
+    if (password.length < 6) {
+      setError('A senha deve ter no mínimo 6 caracteres');
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setError('As senhas não conferem');
+      return;
+    }
+
+    try {
+      await createUser(user);
+      // Redirecionar para a página Home após o registro bem-sucedido
+      navigate('/Home');
+    } catch (err) {
+      setError('Erro ao criar usuário');
+    }
   };
 
   return (
-    <div className={`container ${styles.container}`}>
-      <div className={`card ${styles.card}`}>
-        <button className="btn btn-link align-self-start mb-3" onClick={() => navigate(-1)}>Voltar</button>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="fullName" className="form-label">Nome Completo:</label>
-            <input
-              type="text"
-              id="fullName"
-              name="fullName"
-              className="form-control"
-              required
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className="form-control"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="phone" className="form-label">Telefone:</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              className="form-control"
-              required
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label">Senha:</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              className="form-control"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="confirmPassword" className="form-label">Confirmar Senha:</label>
-            <input
-              type="password"
-              id="confirmPassword"
-              name="confirmPassword"
-              className="form-control"
-              required
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            />
-          </div>
-          <button type="submit" className="btn btn-primary w-100">Registrar-se</button>
-        </form>
-      </div>
+    <div className={styles.register}>
+      <h1>Registre-se</h1>
+
+      <form onSubmit={handleSubmit}>
+        <label className={styles.label}>
+          <span>Email:</span>
+          <input
+            type="email"
+            name="Email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Entre seu email"
+            className={styles.input}
+          />
+        </label>
+        <label>
+          <span>Senha:</span>
+          <input
+            type="password"
+            name="Password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Entre sua senha"
+            className={styles.input}
+          />
+        </label>
+        <label>
+          <span>Confirme sua senha:</span>
+          <input
+            type="password"
+            name="ConfirmPassword"
+            required
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            placeholder="Confirme sua senha"
+            className={styles.input}
+          />
+        </label>
+        <button className="btn">Cadastrar</button>
+        {error && <p>{error}</p>}
+        {authError && <p>{authError}</p>}
+      </form>
     </div>
   );
 };
