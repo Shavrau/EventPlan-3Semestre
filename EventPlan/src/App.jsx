@@ -12,6 +12,7 @@ import Event from './pages/Event/Event'
 import About from './pages/About/About'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Profile from './pages/Profile/Profile'
 
 function App() {
 
@@ -20,13 +21,14 @@ function App() {
       <AuthProvider>
         <BrowserRouter>
           <Navbar />
-          <div className="container-fluid">
+          <div className="container-flui">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/event" element={<Event />} />
             <Route path="/about" element={<About />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
           </div>
