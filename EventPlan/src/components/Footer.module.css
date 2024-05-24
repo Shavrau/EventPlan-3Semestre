@@ -1,0 +1,124 @@
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.footerCustom {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #0d0013;
+    color: #ffffff;
+}
+
+.leftItems {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 2%;
+}
+
+.sobre {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex;
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+    color: #fff;
+    padding-top: 8px;
+}
+  
+.sobre1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex;
+    text-align: center;
+    align-items: center;
+    max-width: 450px;
+    padding-top: 8px;
+}
+
+.centerItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    flex-grow: 1;
+    padding-right: 7%;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+}
+  
+.contato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+}
+  
+.icon {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.rightItems {
+    display: flex-end;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10%;
+}
+
+.rightItems p{
+    color: #fff;
+}
+  
+.ajuda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+    color: #fff;
+    padding-top: 8px;
+}
+  
+.ajuda1 {
+    display: flex-start;
+    justify-content: center;
+    text-align: center;
+}
+  
+ul {
+    list-style-type: none;
+}
+
+.icon {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .container-fluid {
+        flex-direction: column;
+    }
+
+    .footerCustom {
+        padding: 10px;
+    }
+
+    .rightItems {
+        padding-right: 140px;
+    }
+}
