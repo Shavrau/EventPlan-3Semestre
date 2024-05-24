@@ -54,7 +54,6 @@
 
   .rightItems {
     padding-right: 10px;
-    /* Removendo o alinhamento à direita para que o ícone de pesquisa não desapareça */
     justify-content: flex-start;
   }
 

@@ -1,0 +1,930 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('img/wallpaper.jpg') no-repeat center center/cover;
+    transform: scale(1);
+    transform-origin: 0 0;
+}
+
+.planofundo {
+    max-width: 1440px;
+    width: 100%;
+    height: 240px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #B6B6B6;
+    color: #FFFFFF;
+    box-sizing: border-box;
+    position: relative;
+}
+
+main {
+    height: 150vh;
+    margin: 0; 
+    padding: 0;
+  } 
+
+.content6 {
+    width: 140px;
+    height: 40px;
+    background-color: white;
+    position: absolute;
+    top: 40%;
+    left: 5%; 
+    font-family: 'Inter', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    box-sizing: border-box;
+}
+
+
+.iconevoltar {
+    font-size: 21px;
+    width: 30px;
+    height: 30px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    margin: 9% 0 1.5%;
+}
+
+.perfil img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: 12%;
+}
+
+.username {
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    position: absolute;
+    left: 350px; 
+    top: 250px; 
+}
+
+
+.content {
+    width: 1000px;
+    height: 582px;
+    margin: calc(35px) auto 0;
+    padding: 20px;
+    background-color: #C2CAE8;
+    border: 2px solid #8380B6;
+    border-radius: 10px;
+    box-shadow: 4px 5px 1px rgba(131, 128, 182, 0.25);
+    filter: drop-shadow(0 0 1px rgba(131, 128, 182, 1)) drop-shadow(4px 5px 1px rgba(131, 128, 182, 0.25));
+    position: relative;
+}
+
+.sobreUsuario p {
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    margin: 4% 0 0 5%; 
+}
+
+.iconelapis {
+    font-size: 40px;
+    color: #000;
+    margin: -3% 0 0 93%;
+}
+
+
+.content2 {
+    position: absolute;
+    width: 800px;
+    height: 201px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    margin: -50px auto 0;
+    background-color: #C2CAE8;
+    border: 2px solid #8380B6;
+    border-radius: 10px;
+    box-shadow: 4px 5px 1px rgba(131, 128, 182, 0.25);
+    filter: drop-shadow(0 0 1px rgba(131, 128, 182, 1)) drop-shadow(4px 5px 1px rgba(131, 128, 182, 0.25));
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.content2 p {
+    margin: 0;
+    line-height: 1.5;
+    max-width: 100%;
+}
+
+.content3 {
+    width: 800px;
+    height: 91px;
+    background-color: white;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.content4 {
+    width: 1000px;
+    height: 780px;
+    margin: 40px auto 0;
+    padding: 20px;
+    background-color: #C2CAE8;
+    border: 2px solid #8380B6;
+    border-radius: 10px;
+    box-shadow: 4px 5px 1px 0px rgba(131, 128, 182, 0.25); 
+    filter: drop-shadow(0px 0px 1px rgba(131, 128, 182, 1)) drop-shadow(4px 5px 1px rgba(131, 128, 182, 0.25)); 
+    margin-top: 30px;
+}
+
+.content5 {
+    width: 206px;
+    height: 60px;
+    background-color: white;
+    position: absolute;
+    top: 92.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.galleryContainer {
+    margin-left: 300px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0; 
+    margin-left: -16%; 
+    margin-right: auto; 
+    margin-top: 1px;
+}
+
+.gallery img {
+    width: 180px;
+    height: 220px;
+    margin-right: 40px;
+    margin-top: 8%;
+}
+
+
+@media only screen and (max-width: 9999px) {
+    .planofundo {
+        max-width: 100%; 
+        height: 240px;
+        padding: 10px;
+    }
+
+    .content6 {
+        width: 140px;
+        height: 40px;
+        top: 40%;
+        left: 5%;
+        font-size: 21px;
+    }
+
+    .iconevoltar {
+        font-size: 21px;
+        width: 30px;
+        height: 30px;
+        margin-top: 0;
+        margin-right: 1px;
+        transform: scaleX(-1);
+    }
+
+    .perfil {
+        justify-content: flex-start; 
+        margin: 150px 0 2px; 
+    }
+    
+    .perfil img {
+        width: 125px;
+        height: 125px;
+        margin-left: 50px; 
+    }
+    
+    .username {
+        justify-content: flex-start;
+        left: 190px; 
+        top: 245px; 
+        font-size: 24px;
+    }
+    
+
+    .content {
+        margin: calc(25px) auto 0;
+        width: 700px;
+        height: 400px;
+    }
+
+    .sobreUsuario p {
+        font-size: 24px;
+        margin: 1% 0 0 5%;
+    }
+
+    .iconelapis {
+        font-size: 30px;
+        color: #000;
+        margin: -6% 0 0 89%;
+    }
+
+    .content2 {
+        width: 500px;
+        height: 200px;
+        top: 55%;
+        font-size: 20px;
+    }
+
+    .content3 {
+        width: 500px;
+        height: 60px;
+        top: 85%;
+        font-size: 24px;
+    }
+
+    .content4 {
+        width: 700px;
+        height: 500px;
+        margin-top: 30px;
+    }
+
+    .content5 {
+        width: 200px;
+        height: 50px;
+        font-size: 24px;
+        top: 92%;
+    }
+
+    .galleryContainer {
+        margin-left: 200px;
+    }
+    
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0; 
+        margin-left: -20%; 
+        margin-right: auto; 
+        margin-top: 1px;
+    }
+    
+    .gallery img {
+        width: 137px;
+        height: 162px;
+        margin-right: 30px;
+        margin-top: 2%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .planofundo {
+        max-width: 100%; 
+        height: 250px;
+        padding: 10px;
+    }
+
+    .content6 {
+        width: 100px;
+        height: 30px;
+        top: 40%;
+        left: 5%;
+        font-size: 15px;
+    }
+
+    .iconevoltar {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+        margin-right: 4px;
+        transform: scaleX(-1);
+    }
+
+    .perfil {
+        justify-content: flex-start; 
+        margin: 165px 0 1.5%;
+    }
+
+    .perfil img {
+        width: 125px;
+        height: 125px;
+        margin-left: 50px;
+    }
+
+    .username {
+        justify-content: flex-start;
+        left: 190px; 
+        top: 255px; 
+    }
+
+    .content {
+        margin: calc(25px) auto 0;
+        width: 600px;
+        height: 400px;
+    }
+
+    .sobreUsuario p {
+        font-size: 24px;
+        margin: 1% 0 0 5%;
+    }
+
+    .iconelapis {
+        font-size: 30px;
+        color: #000;
+        margin: -6% 0 0 96%;
+    }
+
+    .content2 {
+        width: 500px;
+        height: 200px;
+        top: 55%;
+        font-size: 20px;
+    }
+
+    .content3 {
+        width: 500px;
+        height: 60px;
+        top: 85%;
+        font-size: 24px;
+    }
+
+    .content4 {
+        width: 600px;
+        height: 400px;
+        margin-top: 30px;
+    }
+
+    .content5 {
+        width: 200px;
+        height: 50px;
+        font-size: 24px;
+        top: 90%;
+    }
+
+    .galleryContainer {
+        margin-left: 200px;
+    }
+    
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0; 
+        margin-left: -20%; 
+        margin-right: auto; 
+        margin-top: 1px;
+    }
+    
+    .gallery img {
+        width: 77px;
+        height: 102px;
+        margin-right: 30px;
+        margin-top: 5%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .planofundo {
+        max-width: 100%; 
+        height: 250px;
+        padding: 10px;
+    }
+
+    .content6 {
+        width: 35px;
+        height: 35px;
+        top: 40%;
+        left: 5%;
+        font-size: 0; 
+    }
+
+    .content6 .iconevoltar {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+        margin-right: 0px;
+        transform: scaleX(-1);
+    }
+
+    .perfil {
+        justify-content: flex-start; 
+        margin: 180px 0 2px; 
+    }
+    
+    .perfil img {
+        width: 100px;
+        height: 99px;
+        margin-left: 50px; 
+    } 
+
+    .username {
+        justify-content: flex-start;
+        left: 160px; 
+        top: 260px; 
+        font-size: 18px;
+    }
+
+    .content {
+        margin: calc(25px) auto 0;
+        width: 292px;
+        height: 319px;
+    }
+
+    .sobreUsuario p {
+        font-size: 18px;
+        margin: 0% 0 0 0%;
+    }
+
+    .iconelapis {
+        font-size: 25px;
+        color: #000;
+        margin: -14% 0 0 92%;
+    }
+
+    .content2 {
+        width: 261px;
+        height: 193px;
+        top: 63%;
+        font-size: 12px;
+    }
+
+    .content3 {
+        width: 261px;
+        height: 49px;
+        top: 89%;
+        font-size: 24px;
+    }
+
+    .content4 {
+        width: 292px;
+        height: 330px;
+        margin-top: 30px;
+    }
+
+    .content5 {
+        width: 180px;
+        height: 41px;
+        font-size: 20px;
+        top: 90%;
+    }
+
+    .galleryContainer {
+        margin-left: 100px;
+    }
+    
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0; 
+        margin-left: -60%; 
+        margin-right: auto; 
+        margin-top: 18px;
+    }
+    
+    .gallery img {
+        width: 79px;
+        height: 78px;
+        margin-right: 9px;
+        margin-top: 6%;
+        width: calc(33.33% - 9px); 
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .planofundo {
+        max-width: 100%; 
+        height: 180px;
+        padding: 10px;
+    }
+
+    .content6 {
+        width: 35px;
+        height: 35px;
+        top: 40%;
+        left: 5%;
+        font-size: 0; 
+    }
+
+    .content6 .iconevoltar {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+        margin-right: 0px;
+        transform: scaleX(-1);
+    }
+
+    .perfil {
+        justify-content: flex-start; 
+        margin: 110px 0 1.5%;
+    }
+
+    .perfil img {
+        width: 100px;
+        height: 100px;
+        margin-left: 50px
+    }
+
+    .username {
+        justify-content: flex-start;
+        left: 160px; 
+        top: 190px; 
+        font-size: 16px;
+    }
+
+    .content {
+        margin: calc(25px) auto 0;
+        width: 180px;
+        height: 209px;
+    }
+
+    .sobreUsuario p {
+        font-size: 16px;
+        margin: 0% 0 0 0%;
+    }
+
+    .iconelapis {
+        font-size: 16px;
+        color: #000;
+        margin: -18% 0 0 94%;
+    }
+
+    .content2 {
+        width: 152px;
+        height: 104px;
+        top: 72%;
+        font-size: 6.5px;
+    }
+
+    .content3 {
+        width: 152px;
+        height: 37px;
+        top: 86%;
+        font-size: 16px;
+    }
+
+    .content4 {
+        width: 182px;
+        height: 240px;
+        margin-top: 22.5px;
+    }
+
+    .content5 {
+        width: 100px;
+        height: 38px;
+        font-size: 16px;
+        top: 86%;
+    }
+
+    .galleryContainer {
+        margin-left: 100px;
+    }
+    
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0; 
+        margin-left: -210%; 
+        margin-right: auto; 
+        margin-top: 10px;
+    }
+    
+    .gallery img {
+        width: 69px;
+        height: 48px;
+        margin-right: 6px;
+        margin-top: 6%;
+        width: calc(33.33% - 9px); 
+    }
+}
+
+@media only screen and (max-width: 250px) {
+    .planofundo {
+        max-width: 100%; 
+        height: 180px;
+        padding: 10px;
+    }
+
+    .content6 {
+        width: 35px;
+        height: 35px;
+        top: 40%;
+        left: 5%;
+        font-size: 0; 
+    }
+
+    .content6 .iconevoltar {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+        margin-right: 0px;
+        transform: scaleX(-1);
+    }
+
+    .perfil {
+        justify-content: flex-start; 
+        margin: 110px 0 1.5%;
+    }
+
+    .perfil img {
+        width: 100px;
+        height: 100px;
+        margin-left: 0px
+    }
+
+    .username {
+        justify-content: flex-start;
+        left: 115px; 
+        top: 185px; 
+        font-size: 16px;
+    }
+
+    .content {
+        margin: calc(25px) auto 0;
+        width: 110px;
+        height: 60px;
+    }
+
+    .sobreUsuario p {
+        font-size: 12px;
+        margin: 0% 0 0 0%;
+        display: none;
+    }
+
+    .iconelapis {
+        font-size: 15px;
+        color: #000;
+        margin: -15% 0 0 85%;
+        display: none;
+    }
+
+    .content2 {
+        width: 100px;
+        height: 94px;
+        top: 65%;
+        font-size: 8px;
+        display: none;
+    }
+
+    .content3 {
+        width: 100px;
+        height: 40px;
+        top: 50%;
+        font-size: 12px;
+    }
+
+    .content4 {
+        width: 110px;
+        height: 60px;
+        margin-top: 20px;
+    }
+
+    .content5 {
+        width: 100px;
+        height: 40px;
+        top: 50%;
+        font-size: 14px;
+    }
+
+    .galleryContainer {
+        display: none;
+    }
+    
+    .gallery {
+        display: none;
+    }
+    
+    .gallery img {
+        display: none;
+    }
+
+}
+
+
+@media only screen and (max-width: 170px) {
+        .planofundo {
+            max-width: 100%; 
+            height: 100px;
+            padding: 10px;
+        }
+    
+        .content6 {
+            width: 20px;
+            height: 20px;
+            top: 12%;
+            left: 5%;
+            font-size: 0; 
+        }
+    
+        .content6 .iconevoltar {
+            font-size: 10px;
+            width: 10px;
+            height: 10px;
+            margin-top: 0;
+            margin-right: 0px;
+            transform: scaleX(-1);
+        }
+    
+        .perfil {
+            justify-content: flex-start; 
+            margin: 65px 0 1.5%;
+        }
+    
+        .perfil img {
+            width: 40px;
+            height: 40px;
+            margin-left: 5px
+        }
+    
+        .username {
+            display: none;
+        }
+    
+        .content {
+            margin: calc(25px) auto 0;
+            width: 6px;
+            height: 0px;
+        }
+    
+        .sobreUsuario p {
+            display: none;
+        }
+    
+        .iconelapis {
+            display: none;
+        }
+    
+        .content2 {
+            width: 100px;
+            height: 94px;
+            top: 65%;
+            font-size: 8px;
+            display: none;
+        }
+    
+        .content3 {
+            width: 35px;
+            height: 20px;
+            top: 50%;
+            font-size: 5px;
+        }
+    
+        .content4 {
+            width: 6px;
+            height: 0px;
+            margin-top: 30px;
+        }
+    
+        .content5 {
+            width: 35px;
+            height: 20px;
+            top: 50%;
+            font-size: 5px;
+        }
+    
+        .galleryContainer {
+            display: none;
+        }
+        
+        .gallery {
+            display: none;
+        }
+        
+        .gallery img {
+            display: none;
+        }
+
+    @media only screen and (max-width: 70px) {
+        .planofundo {
+            max-width: 100%; 
+            height: 50px;
+            padding: 10px;
+        }
+    
+        .content6 {
+            width: 10px;
+            height: 10px;
+            top: 12%;
+            left: 5%;
+            font-size: 0; 
+        }
+    
+        .content6 .iconevoltar {
+            font-size: 5px;
+            width: 10px;
+            height: 10px;
+            margin-top: 5px;
+            margin-right: 0px;
+            transform: scaleX(-1);
+        }
+    
+        .perfil {
+            justify-content: flex-start; 
+            margin: 28px 0 1.5%;
+        }
+    
+        .perfil img {
+            width: 20px;
+            height: 20px;
+            margin-left: -10px
+        }
+    
+        .username {
+            display: none;
+        }
+    
+        .content {
+            display: none;
+        }
+    
+        .sobreUsuario p {
+            display: none;
+        }
+    
+        .iconelapis {
+            display: none;
+        }
+    
+        .content2 {
+            display: none;
+        }
+    
+        .content3 {
+            display: none;
+        }
+    
+        .content4 {
+            display: none;
+        }
+    
+        .content5 {
+            display: none;
+        }
+    
+        .galleryContainer {
+            display: none;
+        }
+        
+        .gallery {
+            display: none;
+        }
+        
+        .gallery img {
+            display: none;
+        }
+    }
+}
+    
