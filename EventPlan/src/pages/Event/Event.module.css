@@ -1,0 +1,56 @@
+.container {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px;
+    background-color: #f5f5f5;
+}
+
+.imageContainer {
+    width: 100%;
+    overflow: hidden;
+}
+
+.eventImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 1160px;
+    max-height: 520px;
+    border-radius: 10px 10px 0 0;
+}
+
+.description,
+.dateVenue,
+.tickets,
+.price {
+    border-radius: 10px;
+    background-color: #C2CAE8;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.description p,
+.dateVenue p,
+.tickets p,
+.price p {
+    margin: 0;
+}
+
+.cartIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C2CAE8;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.cartIcon svg {
+    font-size: 24px;
+}
+
+.marginTop20 {
+    margin-top: 20px;
+}
