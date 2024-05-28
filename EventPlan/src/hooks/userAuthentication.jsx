@@ -1,4 +1,4 @@
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { useState } from 'react';
 
 export const userAuthentication = () => {
@@ -47,11 +47,39 @@ export const userAuthentication = () => {
         }
     };
 
+    const login = async (data) => {
+        checkCancel();
+        setLoading(true);
+        setError(null);
+
+        try {
+            const { user } = await signInWithEmailAndPassword(auth, data.email, data.password);
+
+            setLoading(false);
+
+            return user;
+        } catch (error) {
+            console.error(error.message);
+
+            let systemErrorMessage;
+
+            if (error.code === "auth/wrong-password" || error.code === "auth/user-not-found") {
+                systemErrorMessage = "Email ou senha incorretos";
+            } else {
+                systemErrorMessage = "Erro ao fazer login";
+            }
+
+            setLoading(false);
+            setError(systemErrorMessage);
+        }
+    };
+
     return {
         auth,
         error,
         loading,
         createUser,
+        login,
         setCancel
     };
 };

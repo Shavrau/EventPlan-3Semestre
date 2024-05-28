@@ -1,11 +1,3 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: url('img/wallpaper.jpg') no-repeat center center/cover;
-    transform: scale(1);
-    transform-origin: 0 0;
-}
 
 .planofundo {
     max-width: 1440px;
@@ -20,7 +12,7 @@ body {
 }
 
 main {
-    height: 150vh;
+    height: 180vh;
     margin: 0; 
     padding: 0;
   } 
@@ -165,8 +157,6 @@ main {
 }
 
 .content4 {
-    width: 1000px;
-    height: 780px;
     margin: 40px auto 0;
     padding: 20px;
     background-color: #C2CAE8;
@@ -178,8 +168,6 @@ main {
 }
 
 .content5 {
-    width: 206px;
-    height: 60px;
     background-color: white;
     position: absolute;
     top: 92.5%;

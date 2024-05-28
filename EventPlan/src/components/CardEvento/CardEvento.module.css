@@ -40,7 +40,7 @@
 
 @media (max-width: 768px) {
   .card {
-    flex: 1 1 calc(33.33% - 2rem); /* Três cartões por linha */
+    flex: 1 1 calc(33.33% - 2rem); 
     margin: 0.5rem;
   }
 
@@ -53,12 +53,12 @@
   }
 
   .cardTitle {
-    display: none; /* Esconder o título no mobile */
+    display: none;
   }
 }
 
 @media (min-width: 769px) {
   .card {
-    flex: 1 1 calc(50% - 2rem); /* Dois cartões por linha */
+    flex: 1 1 calc(50% - 2rem);
   }
 }

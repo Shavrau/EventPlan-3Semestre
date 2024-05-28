@@ -4,7 +4,6 @@
   object-fit: cover;
 }
 
-/* Estilo para telas grandes */
 @media (min-width: 1360px) {
   .carouselContainer img {
     height: 480px;

@@ -51,15 +51,15 @@ const Event = () => {
         </Col>
       </Row>
       <Row>
-        <Col>
+        <Col md={10}>
           <div className={styles.tickets}>
             <p><strong>Ingressos:</strong></p>
             <p>Ingressos a partir de R$ {eventData.valorMin}</p>
           </div>
         </Col>
-        <Col>
+        <Col md={2}>
           <div className={styles.cartIcon}>
-          <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
+            <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
           </div>
         </Col>
       </Row>
