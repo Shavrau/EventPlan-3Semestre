@@ -1,9 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faInstagram, faWhatsapp} from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../assets/Logo.svg";
 import styles from "./Footer.module.css";
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   const iconSize = "1.75rem";
@@ -13,48 +14,66 @@ const Footer = () => {
       <div className={`container-fluid ${styles.footerCustom}`}>
         <div className={styles.leftItems}>
           <ul>
-            <NavLink to="about">
-              <li><p className={styles.sobre}>Sobre</p></li>
-            </NavLink>
-            <li><p NavLink to='../about' className={styles.sobre1}>Nosso site EventPlan surgiu de um trabalho transdisciplinar, elaborado por estudantes da Fatec Luiz Marchesan.</p></li>
+            <li>
+              <NavLink to="/about" className={styles.link}>
+                <p className={styles.sobre}>Sobre</p>
+              </NavLink>
+            </li>
+            <li>
+              <p className={styles.sobre1}>
+                Nosso site EventPlan surgiu de um trabalho transdisciplinar, elaborado por estudantes da Fatec Luiz Marchesan.
+              </p>
+            </li>
           </ul>
         </div>
         <div className={styles.centerItem}>
           <ul>
-            <NavLink to="home">
-              <img src={Logo} alt="Logo" className={styles.logo} />
-            </NavLink>
-            <p className={styles.contato}>Contatos</p>
-            <div>
-              <NavLink to="Facebook">
+            <li>
+              <NavLink to="/home">
+                <img src={Logo} alt="Logo" className={styles.logo} />
+              </NavLink>
+            </li>
+            <li>
+              <p className={styles.contato}>Contatos</p>
+            </li>
+            <li>
+              <NavLink to="#">
                 <FontAwesomeIcon icon={faFacebook} style={{ fontSize: iconSize }} className={styles.icon} />
               </NavLink>
-              <NavLink to="Instagram">
+              <NavLink to="#">
                 <FontAwesomeIcon icon={faInstagram} style={{ fontSize: iconSize }} className={styles.icon} />
               </NavLink>
-              <NavLink to="Whatsapp">
+              <NavLink to="#">
                 <FontAwesomeIcon icon={faWhatsapp} style={{ fontSize: iconSize }} className={styles.icon} />
               </NavLink>
-              <NavLink to="Email">
-                <FontAwesomeIcon icon="fa-regular fa-envelope" style={{ fontSize: iconSize }} className={styles.icon} />
+              <NavLink to="#">
+                <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: iconSize }} className={styles.icon} />
               </NavLink>
-            </div>
+            </li>
           </ul>
         </div>
         <div className={styles.rightItems}>
           <ul>
-            <NavLink to="Ajuda">
-              <p className={styles.ajuda}>Ajuda</p>
-            </NavLink>
-            <NavLink to="Central">
-              <li><p className={styles.ajuda1}>Central de ajuda</p></li>
-            </NavLink>
-            <NavLink to="Compradores">
-              <li><p className={styles.ajuda1}>Compradores e participantes</p></li>
-            </NavLink>
-            <NavLink to="Produtores">
-              <li><p className={styles.ajuda1}>Produtores de eventos</p></li>
-            </NavLink>
+            <li>
+              <NavLink to="#" className={styles.link}>
+                <p className={styles.ajuda}>Ajuda</p>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="#" className={styles.link}>
+                <p className={styles.ajuda1}>Central de ajuda</p>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="#" className={styles.link}>
+                <p className={styles.ajuda1}>Compradores e participantes</p>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="#" className={styles.link}>
+                <p className={styles.ajuda1}>Produtores de eventos</p>
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>

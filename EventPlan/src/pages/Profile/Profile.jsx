@@ -9,7 +9,7 @@ import AndreaBocelliImg from "../../assets/AndreaBocelli.jpeg";
 import FerrugemImg from "../../assets/Ferrugem.jpeg";
 import RobertaSaImg from "../../assets/RobertaSá.jpeg";
 
-const About = () => {
+const Profile = () => {
   return (
     
     <main>
@@ -62,4 +62,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Profile;
