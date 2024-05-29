@@ -1,8 +1,10 @@
 import React from 'react'
 import styles from './Login.module.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { userAuthentication } from '../../hooks/userAuthentication'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -29,9 +31,10 @@ const Login = () => {
   }, [authError])
 
   return (
+    <div className={styles.container}>
       <div className={styles.login}>
         <form onSubmit={handlerSubmit}>
-          <label>
+          <label className={styles.label}>
             <span>Email:</span>
             <input
               type='email'
@@ -39,9 +42,10 @@ const Login = () => {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className={styles.input}
             />
           </label>
-          <label>
+          <label className={styles.label}>
             <span>Senha:</span>
             <input
               type='password'
@@ -49,15 +53,31 @@ const Login = () => {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className={styles.input}
             />
           </label>
-          <div className="fsenha"><p>Esqueceu a senha?</p></div>
-          {!loading && <button className='btn'>Login</button>}
+          <p className={styles.terms}>
+          <span style={{ color: '#306AFF' }}>Esqueceu a senha?</span>
+          </p>
+          {!loading && <button className={styles.btn}>LOGIN</button>}
           {loading && <button className='btn' disabled>Carregando...</button>}
           {error && <p className='error'>{error}</p>}
+          <p className={styles.ou}>
+          <span style={{ color: '#000000' }}>OU</span>
+          </p>
+          <NavLink to="../Register">
+          <button className={styles.btn}>REGISTRAR-SE</button>
+          </NavLink>
         </form>
       </div>
-  )
-}
+      <NavLink to="../Home">
+      <div className={styles.content6}>
+        <FontAwesomeIcon icon="fa-solid fa-right-to-bracket" className={styles.iconevoltar} />
+        VOLTAR
+      </div>
+      </NavLink>
+      </div>
+  );
+};
 
 export default Login
