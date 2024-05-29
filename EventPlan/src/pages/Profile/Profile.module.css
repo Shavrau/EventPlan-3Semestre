@@ -20,7 +20,7 @@ body {
 }
 
 main {
-    height: 1760px;
+    height: 1770px;
     margin: 0; 
     padding: 0;
   } 
@@ -224,7 +224,7 @@ main {
 
 @media only screen and (max-width: 1300px) {
     main {
-        height: 1270px;
+        height: 1285px;
         margin: 0; 
         padding: 0;
       } 
@@ -450,7 +450,7 @@ main {
 
 @media only screen and (max-width: 650px) {
     main {
-        height: 1020px;
+        height: 1035px;
         margin: 0; 
         padding: 0;
       } 
@@ -564,7 +564,7 @@ main {
 
 @media only screen and (max-width: 440px) {
     main {
-        height: 740px;
+        height: 755px;
         margin: 0; 
         padding: 0;
       } 
@@ -678,7 +678,7 @@ main {
 
 @media only screen and (max-width: 250px) {
     main {
-        height: 500px;
+        height: 470px;
         margin: 0; 
         padding: 0;
       } 
@@ -788,7 +788,7 @@ main {
 
 @media only screen and (max-width: 170px) {
     main {
-        height: 450px;
+        height: 380px;
         margin: 0; 
         padding: 0;
       } 
@@ -887,7 +887,7 @@ main {
 
     @media only screen and (max-width: 70px) {
         main {
-            height: 400px;
+            height: 380px;
             margin: 0; 
             padding: 0;
           } 
