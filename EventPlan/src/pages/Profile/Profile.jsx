@@ -8,8 +8,9 @@ import RebeldeImg from "../../assets/Rebelde.jpeg";
 import AndreaBocelliImg from "../../assets/AndreaBocelli.jpeg";
 import FerrugemImg from "../../assets/Ferrugem.jpeg";
 import RobertaSaImg from "../../assets/RobertaSá.jpeg";
+import { NavLink } from 'react-router-dom';
 
-const Profile = () => {
+const About = () => {
   return (
     
     <main>
@@ -52,14 +53,15 @@ const Profile = () => {
                   </div>
               </div>
           </div>
-      
+          <NavLink to="../Home">
           <div className={styles.content6}>
           <FontAwesomeIcon icon="fa-solid fa-right-to-bracket" className={styles.iconevoltar} />
           VOLTAR
           </div>
+          </NavLink>
       </div>
       </main>
   );
 };
 
-export default Profile;
+export default About;
