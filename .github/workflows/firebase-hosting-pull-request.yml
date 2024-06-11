@@ -21,3 +21,4 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_EVENTPLAN_30036 }}
           projectId: eventplan-30036
+          entryPoint: EventPlan
