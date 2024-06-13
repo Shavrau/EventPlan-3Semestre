@@ -1,0 +1,31 @@
+.container {
+    height: 100vh;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 400px;
+    background-color: #000;
+    color: #fff;
+    border-color: #fff;
+  }
+  
+  .form-control {
+    background-color: #222;
+    color: #fff;
+    border-color: #fff;
+  }
+  
+.btn1 {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .text-success {
+    color: #28a745;
+  }
+  
+  .text-danger {
+    color: #dc3545;
+  }
+  
