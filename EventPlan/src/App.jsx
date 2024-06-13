@@ -13,6 +13,7 @@ import About from './pages/About/About'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Profile from './pages/Profile/Profile'
+import RecoverPass from './pages/RecoverPass/RecoverPass'
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="*" element={<Navigate to="/" />} />
+            <Route path="/recoverpass" element={<RecoverPass />} />
           </Routes>
           </div>
           <Footer />

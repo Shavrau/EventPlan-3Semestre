@@ -68,9 +68,11 @@ const Login = () => {
               className={styles.input}
             />
           </label>
+          <NavLink to="../recoverpass">
           <p className={styles.terms}>
             <span style={{ color: '#306AFF' }}>Esqueceu a senha?</span>
           </p>
+          </NavLink>
           {!loading && <button className={styles.btn}>LOGIN</button>}
           <div className={styles.socialLogin}>
             <button className={styles.btn} type="button" onClick={handleGoogleSignIn}>
