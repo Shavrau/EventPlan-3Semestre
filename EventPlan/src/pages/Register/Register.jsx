@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 
-
 const Register = () => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -14,7 +13,6 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   
-
   const { createUser, error: authError, loading } = userAuthentication();
   const navigate = useNavigate();
 
@@ -25,7 +23,7 @@ const Register = () => {
     const user = {
       email,
       password,
-      displayName
+      displayName: fullName
     };
 
     if (password.length < 6) {
@@ -59,7 +57,7 @@ const Register = () => {
               required
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
-              placeholder=""
+              placeholder="Digite seu nome completo"
               className={styles.input}
             />
           </label>
@@ -71,7 +69,7 @@ const Register = () => {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder=""
+              placeholder="Digite seu email"
               className={styles.input}
             />
           </label>
@@ -83,7 +81,7 @@ const Register = () => {
               required
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              placeholder=""
+              placeholder="Digite seu telefone"
               className={styles.input}
             />
           </label>
@@ -95,7 +93,7 @@ const Register = () => {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder=""
+              placeholder="Digite sua senha"
               className={styles.input}
             />
           </label>
@@ -107,7 +105,7 @@ const Register = () => {
               required
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              placeholder=""
+              placeholder="Confirme sua senha"
               className={styles.input}
             />
           </label>
@@ -120,14 +118,13 @@ const Register = () => {
         </form>
       </div>
       <NavLink to="../Login">
-      <div className={styles.content6}>
-        <FontAwesomeIcon icon="fa-solid fa-right-to-bracket" className={styles.iconevoltar} />
-        VOLTAR
-      </div>
+        <div className={styles.content6}>
+          <FontAwesomeIcon icon="fa-solid fa-right-to-bracket" className={styles.iconevoltar} />
+          VOLTAR
+        </div>
       </NavLink>
     </div>
   );
 };
-
 
 export default Register;
