@@ -5,6 +5,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import styles from './Event.module.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Chat from '../../components/Chat/Chat';
 
 const Event = () => {
   const { id } = useParams();
@@ -61,6 +62,11 @@ const Event = () => {
           <div className={styles.cartIcon}>
             <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
           </div>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Chat eventId={id} /> 
         </Col>
       </Row>
     </Container>
