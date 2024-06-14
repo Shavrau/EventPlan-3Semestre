@@ -6,6 +6,7 @@ import styles from './Event.module.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Chat from '../../components/Chat/Chat';
+import EventRating from '../../components/Avaliacao/Avaliacao';
 
 const Event = () => {
   const { id } = useParams();
@@ -66,7 +67,12 @@ const Event = () => {
       </Row>
       <Row>
         <Col>
-          <Chat eventId={id} /> 
+          <Chat eventId={id} />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <EventRating eventId={id} />
         </Col>
       </Row>
     </Container>
