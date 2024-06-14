@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { userAuthentication } from '../../hooks/userAuthentication';
 import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -17,34 +19,60 @@ const Login = () => {
     e.preventDefault();
     setError('');
     const user = { email, password };
-    const res = await login(user);
-    console.table(res);
-    navigate('../Home');
+
+    try {
+      const res = await login(user);
+      if (res) {
+        toast.success('Login realizado com sucesso!');
+        setTimeout(() => {
+          navigate('../Home');
+        }, 1000); // Aguarda 1 segundo antes de redirecionar
+      }
+    } catch (err) {
+      setError(err.message || 'Erro ao fazer login');
+      toast.error(err.message || 'Erro ao fazer login');
+    }
   };
 
   const handleGoogleSignIn = async () => {
-    const user = await googleSignIn();
-    if (user) {
-      navigate('../Home');
+    try {
+      const user = await googleSignIn();
+      if (user) {
+        toast.success('Login com Google realizado com sucesso!');
+        setTimeout(() => {
+          navigate('../Home');
+        }, 1000); // Aguarda 1 segundo antes de redirecionar
+      }
+    } catch (err) {
+      toast.error(err.message || 'Erro ao fazer login com Google');
     }
   };
 
   const handleFacebookSignIn = async () => {
-    const user = await facebookSignIn();
-    if (user) {
-      navigate('../Home');
+    try {
+      const user = await facebookSignIn();
+      if (user) {
+        toast.success('Login com Facebook realizado com sucesso!');
+        setTimeout(() => {
+          navigate('../Home');
+        }, 1000); // Aguarda 1 segundo antes de redirecionar
+      }
+    } catch (err) {
+      toast.error(err.message || 'Erro ao fazer login com Facebook');
     }
   };
 
   useEffect(() => {
     if (authError) {
       setError(authError);
+      toast.error(authError);
     }
   }, [authError]);
 
   return (
     <div className={styles.container}>
       <div className={styles.login}>
+        <ToastContainer /> {/* Certifique-se de que o ToastContainer está aqui */}
         <form onSubmit={handlerSubmit}>
           <label className={styles.label}>
             <span>Email:</span>
@@ -71,9 +99,9 @@ const Login = () => {
             />
           </label>
           <NavLink to="../recoverpass">
-          <p className={styles.terms}>
-            <span style={{ color: '#306AFF' }}>Esqueceu a senha?</span>
-          </p>
+            <p className={styles.terms}>
+              <span style={{ color: '#306AFF' }}>Esqueceu a senha?</span>
+            </p>
           </NavLink>
           {!loading && <button className={styles.btn}>LOGIN</button>}
           <div className={styles.socialLogin}>
