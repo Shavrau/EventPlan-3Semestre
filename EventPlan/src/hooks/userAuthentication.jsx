@@ -57,12 +57,15 @@ export const userAuthentication = () => {
 
             if (error.code === "auth/wrong-password" || error.code === "auth/user-not-found") {
                 systemErrorMessage = "Email ou senha incorretos";
+            } else if (error.code === "auth/invalid-email") {
+                systemErrorMessage = "Email inválido";
             } else {
                 systemErrorMessage = "Erro ao fazer login";
             }
 
             setLoading(false);
             setError(systemErrorMessage);
+            throw new Error(systemErrorMessage);
         }
     };
 
@@ -74,6 +77,7 @@ export const userAuthentication = () => {
         } catch (error) {
             console.error(error.message);
             setError("Erro ao fazer login com Google");
+            throw new Error("Erro ao fazer login com Google");
         }
     };
 
@@ -85,6 +89,7 @@ export const userAuthentication = () => {
         } catch (error) {
             console.error(error.message);
             setError("Erro ao fazer login com Facebook");
+            throw new Error("Erro ao fazer login com Facebook");
         }
     };
 

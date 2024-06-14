@@ -1,9 +1,11 @@
-import { userAuthentication } from '../../hooks/userAuthentication';
 import React, { useState } from 'react';
+import { userAuthentication } from '../../hooks/userAuthentication';
 import styles from './Register.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   const [fullName, setFullName] = useState('');
@@ -12,7 +14,7 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
-  
+
   const { createUser, error: authError, loading } = userAuthentication();
   const navigate = useNavigate();
 
@@ -28,25 +30,29 @@ const Register = () => {
 
     if (password.length < 6) {
       setError('A senha deve ter no mínimo 6 caracteres');
+      toast.error('A senha deve ter no mínimo 6 caracteres');
       return;
     }
 
     if (password !== confirmPassword) {
       setError('As senhas não conferem');
+      toast.error('As senhas não conferem');
       return;
     }
 
     try {
       await createUser(user);
-      // Redirecionar para a página Home após o registro bem-sucedido
+      toast.success('Usuário criado com sucesso!');
       navigate('/Home');
     } catch (err) {
-      setError('Erro ao criar usuário');
+      setError(err.message || 'Erro ao criar usuário');
+      toast.error(err.message || 'Erro ao criar usuário');
     }
   };
 
   return (
     <div className={styles.container}>
+      <ToastContainer />
       <div className={styles.register}>
         <form onSubmit={handleSubmit}>
           <label className={styles.label}>
@@ -109,7 +115,9 @@ const Register = () => {
               className={styles.input}
             />
           </label>
-          <button className={styles.btn}>REGISTRAR-SE</button>
+          <button className={styles.btn} disabled={loading}>
+            {loading ? 'Carregando...' : 'REGISTRAR-SE'}
+          </button>
           {error && <p>{error}</p>}
           {authError && <p>{authError}</p>}
           <p className={styles.terms}>
