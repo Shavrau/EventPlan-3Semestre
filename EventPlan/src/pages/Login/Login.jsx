@@ -55,6 +55,7 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className={styles.input}
+              placeholder='Digite seu email'
             />
           </label>
           <label className={styles.label}>
@@ -66,6 +67,7 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className={styles.input}
+              placeholder='Digite sua senha'
             />
           </label>
           <NavLink to="../recoverpass">
