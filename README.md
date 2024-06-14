@@ -1427,3 +1427,144 @@ Repositório para desenvolvimento do software EventPlan, para o cumprimento do P
 
       export default FavoriteEvents;
       ```
+
+41. **[21 pontos] Implementar página de FAQ interativa**
+    - **Descrição**: Adicione uma página de FAQ (Perguntas Frequentes) interativa ao site para fornecer respostas rápidas e úteis para as perguntas mais comuns dos usuários. Esta página deve permitir que os usuários busquem por perguntas e respostas específicas, bem como forneça feedback sobre a utilidade das respostas.
+    - **Exemplo de Código**:
+      ```jsx
+      import React, { useState } from 'react';
+      import { Accordion, Card, Button, Form } from 'react-bootstrap';
+
+      const FAQ = () => {
+        const [searchTerm, setSearchTerm] = useState('');
+        const [faqs, setFaqs] = useState([
+          {
+            question: "What is EventPlan?",
+            answer: "EventPlan is a platform that helps you manage and organize events efficiently.",
+            helpful: 0,
+            notHelpful: 0
+          },
+          {
+            question: "How do I create an event?",
+            answer: "To create an event, log in to your account and navigate to the 'Create Event' section. Fill out the required details and click 'Submit'.",
+            helpful: 0,
+            notHelpful: 0
+          },
+          {
+            question: "How can I contact support?",
+            answer: "You can contact support by emailing support@eventplan.com or by using the contact form on our website.",
+            helpful: 0,
+            notHelpful: 0
+          },
+        ]);
+
+        const handleSearch = (e) => {
+          setSearchTerm(e.target.value);
+        };
+
+        const filteredFaqs = faqs.filter(faq =>
+          faq.question.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+
+        const handleFeedback = (index, type) => {
+          const updatedFaqs = [...faqs];
+          if (type === 'helpful') {
+            updatedFaqs[index].helpful += 1;
+          } else {
+            updatedFaqs[index].notHelpful += 1;
+          }
+          setFaqs(updatedFaqs);
+        };
+
+        return (
+          <div className="container mt-5">
+            <h2>Frequently Asked Questions</h2>
+            <Form.Control
+              type="text"
+              placeholder="Search FAQs"
+              value={searchTerm}
+              onChange={handleSearch}
+              className="mb-4"
+            />
+            <Accordion defaultActiveKey="0">
+              {filteredFaqs.map((faq, index) => (
+                <Card key={index}>
+                  <Card.Header>
+                    <Accordion.Toggle as={Button} variant="link" eventKey={index.toString()}>
+                      {faq.question}
+                    </Accordion.Toggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey={index.toString()}>
+                    <Card.Body>
+                      <p>{faq.answer}</p>
+                      <div>
+                        <Button
+                          variant="outline-success"
+                          size="sm"
+                          onClick={() => handleFeedback(index, 'helpful')}
+                        >
+                          Helpful ({faq.helpful})
+                        </Button>{' '}
+                        <Button
+                          variant="outline-danger"
+                          size="sm"
+                          onClick={() => handleFeedback(index, 'notHelpful')}
+                        >
+                          Not Helpful ({faq.notHelpful})
+                        </Button>
+                      </div>
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+              ))}
+            </Accordion>
+          </div>
+        );
+      };
+
+      export default FAQ;
+      ```
+
+    - **Passos para Implementação**:
+      1. **Criar Componente FAQ**: Crie um novo componente chamado `FAQ.js` e adicione o código acima.
+      2. **Adicionar Rota**: Adicione uma nova rota para a página de FAQ no arquivo de rotas principal da aplicação.
+        ```jsx
+        import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+        import FAQ from './components/FAQ';
+
+        function App() {
+          return (
+            <Router>
+              <Switch>
+                {/* outras rotas */}
+                <Route path="/faq" component={FAQ} />
+              </Switch>
+            </Router>
+          );
+        }
+
+        export default App;
+        ```
+      3. **Adicionar Link no Menu**: Adicione um link para a página de FAQ no menu de navegação para facilitar o acesso.
+        ```jsx
+        import React from 'react';
+        import { Navbar, Nav } from 'react-bootstrap';
+
+        const Header = () => {
+          return (
+            <Navbar bg="dark" variant="dark" expand="lg">
+              <Navbar.Brand href="#home">EventPlan</Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                  <Nav.Link href="/">Home</Nav.Link>
+                  <Nav.Link href="/faq">FAQ</Nav.Link>
+                  {/* outros links */}
+                </Nav>
+              </Navbar.Collapse>
+            </Navbar>
+          );
+        };
+
+        export default Header;
+        ```
