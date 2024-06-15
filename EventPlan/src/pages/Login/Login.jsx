@@ -3,6 +3,7 @@ import styles from './Login.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { userAuthentication } from '../../hooks/userAuthentication';
 import { useNavigate } from 'react-router-dom';
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,6 +12,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const { login, googleSignIn, facebookSignIn, error: authError, loading } = userAuthentication();
   const navigate = useNavigate();
@@ -69,6 +71,11 @@ const Login = () => {
     }
   }, [authError]);
 
+  
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.login}>
@@ -88,15 +95,26 @@ const Login = () => {
           </label>
           <label className={styles.label}>
             <span>Senha:</span>
+            <div className={styles.passwordInputContainer}>
             <input
-              type='password'
-              name='password'
+                type={showPassword ? 'text' : 'password'}
+                name="Password"
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className={styles.input}
               placeholder='Digite sua senha'
-            />
+              className={styles.input}
+              />
+              {password && (
+                <button
+                  type="button"
+                  className={styles.passwordVisibilityToggle}
+                  onClick={togglePasswordVisibility}
+                >
+                  <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                </button>
+              )}
+            </div>
           </label>
           <NavLink to="../recoverpass">
             <p className={styles.terms}>

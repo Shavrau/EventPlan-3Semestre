@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 720px;
-    margin-left: -80px;
+    height: 820px;
+    margin-left: -30px;
     padding-top: 100px;
 }
 
@@ -11,6 +11,24 @@
     max-width: 600px;
     padding-top: 60px;
     font-family: Arial, sans-serif;
+}
+
+.passwordInputContainer {
+    position: relative;
+}
+  
+.passwordVisibilityToggle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -100px; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    color: #000000;
 }
 
 .label {
@@ -65,6 +83,17 @@
     left: 42px;
 }
 
+.socialLogin {
+    margin-left: -5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .socialLogin button {
+    margin-top: 10px; 
+  }
+  
+
 .content6 {
     width: 140px;
     height: 40px;
@@ -101,8 +130,8 @@
 
 .terms {
     text-align: center;
-    font-size: 24px;
-    margin-left: 95px;
+    font-size: 18px;
+    margin-left: 150px;
     font-weight: bold;
     white-space: nowrap;
     position: relative;
@@ -116,11 +145,11 @@
 .terms span::after {
     content: '';
     display: block;
-    width: calc(100% - 1px); /* Ajuste conforme necessário */
+    width: calc(100% - 1px); 
     height: 1px;
     background-color: #306AFF;
     position: absolute;
-    bottom: 1px; /* Ajustado ligeiramente para melhor alinhamento visual */
+    bottom: 1px; 
     left: 50%;
     transform: translateX(-50%);
 } 
@@ -130,8 +159,8 @@
     display: inline-block;
     position: relative;
     font-size: 24px;
-    top: 30px;
-    margin-left: 144px;
+    top: 5px;
+    margin-left: 80px;
 }
 
 .ou::after {
@@ -147,41 +176,71 @@
 
 @media only screen and (max-width: 1300px) {
     .container {
-        height: 650px;
-        margin-left: -80px;
+        height: 750px;
+        margin-left: -30px;
     }
 }
 
 @media only screen and (max-width: 920px) {
     .container {
-        height: 650px;
-        margin-left: -95px;
+        height: 750px;
+        margin-left: -30px;
     }
 }
 
 @media only screen and (max-width: 768px) {
     .container {
-        height: 640px;
-        margin-left: -95px;
+        height: 830px;
+        margin-left: -90px;
     }
+
+    .passwordVisibilityToggle {
+        left: 320px;
+        font-size: 25px;
+    }
+
+    .socialLogin {
+        margin-left: 35px;
+        display: flex;
+        align-items: center;
+    }
+      
+      .socialLogin button {
+        margin-top: 10px; 
+    }
+      
 
     .btn {
         font-size: 19.5px; 
     }
 
     .terms {
-        margin-left: 112px;
+        margin-left: 152px;
     }
 
     .ou {
-        margin-left: 140px;
+        margin-left: 80px;
     }
 }
 
 @media only screen and (max-width: 650px) {
     .container {
-        height: 600px;
-        margin-left: -95px;
+        height: 710px;
+        margin-left: -75px;
+    }
+          
+    .passwordVisibilityToggle {
+        left: 320px;
+    }
+
+    .socialLogin {
+        margin-left: -55px;
+        display: flex;
+        align-items: center;
+    }
+      
+      .socialLogin button {
+        margin-top: 10px; 
     }
 
     .label {
@@ -198,91 +257,112 @@
     .content6 {
         width: 35px;
         height: 35px;
+        top: 94px;
+        left: 15px;
         font-size: 0; 
     }
 
+    .content6 .iconevoltar {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+        margin-right: 0px;
+        transform: scaleX(-1);
+    }
+
     .terms {
-        font-size: 18px;
-        margin-left: 132px;
+        font-size: 16px;
+        margin-left: 172px;
     }
 
     .ou {
         font-size: 18px;
-        margin-left: 134px;
+        margin-left: 160px;
     }
 }
 
 @media only screen and (max-width: 438px) {
     .container {
-        height: 610px;
+        height: 755px;
+        margin-left: -70px;
+    }
+
+    .passwordVisibilityToggle {
+        left: 220px;
+    }
+
+    .socialLogin {
+        margin-left: -22px;
+        display: flex;
+        align-items: center;
+    }
+      
+      .socialLogin button {
+        margin-top: 10px; 
     }
 
     .label {
         font-size: 16px; 
     }
 
-    .btn {
-        font-size: 13.5px; 
-        width: 140px; 
-        height: 35px;
-        left: 58px;
-    }
-
-    .content6 {
-        width: 35px;
-        height: 35px;
-        font-size: 0; 
-    }
-
-    .terms {
-        font-size: 16px;
-        margin-left: 112px;
-    }
-
-    .ou {
-        font-size: 16px;
-        left: -18px;
-    }
-}
-
-@media only screen and (max-width: 390px) {
-    .container {
-        height: 580px;
-        margin-left: -100px;
-    }
-
-    .label {
-        font-size: 16px; 
+    .input {
+        width: 200px;
     }
 
     .btn {
         font-size: 11.5px; 
         width: 120px; 
         height: 35px;
-        left: 70px;
+        left: 50px;
     }
 
     .content6 {
         width: 35px;
         height: 35px;
+        top: 70px;
+        left: 15px;
         font-size: 0; 
+    }
+
+    .content6 .iconevoltar {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+        margin-right: 0px;
+        transform: scaleX(-1);
     }
 
     .terms {
         font-size: 16px;
-        margin-left: 112px;
+        margin-left: 70px;
     }
 
     .ou {
         font-size: 16px;
-        left: -16px;
+        left: -30px;
     }
 }
 
 @media only screen and (max-width: 310px) {
     .container {
-        height: 510px;
+        height: 720px;
         margin-left: -45px;
+    }
+
+    .passwordVisibilityToggle {
+        left: 140px;
+    }
+
+    .socialLogin {
+        margin-left: -35px;
+        display: flex;
+        align-items: center;
+    }
+      
+      .socialLogin button {
+        margin-top: 10px; 
     }
 
     .label {
@@ -303,7 +383,18 @@
     .content6 {
         width: 35px;
         height: 35px;
+        top: 70px;
+        left: 15px;
         font-size: 0; 
+    }
+
+    .content6 .iconevoltar {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+        margin-right: 0px;
+        transform: scaleX(-1);
     }
 
     .terms {
@@ -313,14 +404,29 @@
 
     .ou {
         font-size: 12px;
-        left: -62px;
+        left: -35px;
     }
 }
 
 @media only screen and (max-width: 280px) {
     .container {
-        height: 480px;
+        height: 710px;
         margin-left: -45px;
+    }
+
+    .passwordVisibilityToggle {
+        left: 50px;
+        font-size: 20px;
+    }
+
+    .socialLogin {
+        margin-left: -19px;
+        display: flex;
+        align-items: center;
+    }
+      
+      .socialLogin button {
+        margin-top: 10px; 
     }
 
     .label {
@@ -335,13 +441,24 @@
         font-size: 5.5px; 
         width: 60px; 
         height: 25px;
-        left: 15px;
+        left: 25px;
     }
 
     .content6 {
         width: 35px;
         height: 35px;
+        top: 70px;
+        left: 15px;
         font-size: 0; 
+    }
+
+    .content6 .iconevoltar {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+        margin-right: 0px;
+        transform: scaleX(-1);
     }
 
     .terms {
@@ -351,14 +468,14 @@
 
     .ou {
         font-size: 7px;
-        left: -95px;
+        left: -55px;
     }
 }
 
 .socialLogin {
     display: flex;
     justify-content: center;
-    margin-top: 20px; /* Ajuste conforme necessário */
+    margin-top: 20px; 
 }
 
 .socialLogin .btn {
