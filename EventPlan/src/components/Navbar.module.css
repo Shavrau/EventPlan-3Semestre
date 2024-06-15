@@ -42,9 +42,36 @@
   color: #ffffff;
 }
 
+.LanguageSelector {
+  display: flex;
+  align-items: center;
+  color: #FFF;
+}
+
+.LanguageSelector select {
+  margin-right: 20px;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #343a40;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease, color 0.3s ease;
+}
+
+.LanguageSelector select:hover {
+  background-color: #495057;
+}
+
+.LanguageSelector select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
 @media (max-width: 440px) {
   .leftItems {
-    padding-left: 10px; 
+    padding-left: 10px;
   }
 
   .logo {

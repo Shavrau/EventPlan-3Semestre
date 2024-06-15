@@ -5,6 +5,7 @@ import { faBars, faCircleHalfStroke, faSearch, faUser, faHome, faInfoCircle, faC
 import styles from "./Navbar.module.css";
 import Logo from "../assets/Logo.svg";
 import { NavLink } from "react-router-dom";
+import LanguageSelector from "./Traducao/LanguageSelector";
 
 const Navbar = () => {
   const iconSize = "1.25rem";
@@ -51,6 +52,7 @@ const Navbar = () => {
             </NavLink>
           </div>
           <div className={`ml-auto d-flex align-items-center ${styles.rightItems}`}>
+            <LanguageSelector />
             <FontAwesomeIcon
               icon={faSearch}
               style={{ fontSize: iconSize, marginRight: "20px" }}
