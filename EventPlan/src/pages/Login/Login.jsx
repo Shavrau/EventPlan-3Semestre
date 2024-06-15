@@ -28,7 +28,7 @@ const Login = () => {
         toast.success('Login realizado com sucesso!');
         setTimeout(() => {
           navigate('../Home');
-        }, 1000); // Aguarda 1 segundo antes de redirecionar
+        }, 1000); 
       }
     } catch (err) {
       setError(err.message || 'Erro ao fazer login');
@@ -43,7 +43,7 @@ const Login = () => {
         toast.success('Login com Google realizado com sucesso!');
         setTimeout(() => {
           navigate('../Home');
-        }, 1000); // Aguarda 1 segundo antes de redirecionar
+        }, 1000); 
       }
     } catch (err) {
       toast.error(err.message || 'Erro ao fazer login com Google');
@@ -57,7 +57,7 @@ const Login = () => {
         toast.success('Login com Facebook realizado com sucesso!');
         setTimeout(() => {
           navigate('../Home');
-        }, 1000); // Aguarda 1 segundo antes de redirecionar
+        }, 1000); 
       }
     } catch (err) {
       toast.error(err.message || 'Erro ao fazer login com Facebook');
@@ -79,7 +79,7 @@ const Login = () => {
   return (
     <div className={styles.container}>
       <div className={styles.login}>
-        <ToastContainer /> {/* Certifique-se de que o ToastContainer está aqui */}
+        <ToastContainer /> 
         <form onSubmit={handlerSubmit}>
           <label className={styles.label}>
             <span>Email:</span>
@@ -91,25 +91,28 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
               className={styles.input}
               placeholder='Digite seu email'
+              aria-label='Campo de email'
             />
           </label>
           <label className={styles.label}>
             <span>Senha:</span>
             <div className={styles.passwordInputContainer}>
-            <input
+              <input
                 type={showPassword ? 'text' : 'password'}
                 name="Password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder='Digite sua senha'
-              className={styles.input}
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder='Digite sua senha'
+                className={styles.input}
+                aria-label='Campo de senha'
               />
               {password && (
                 <button
                   type="button"
                   className={styles.passwordVisibilityToggle}
                   onClick={togglePasswordVisibility}
+                  aria-label={showPassword ? 'Esconder senha' : 'Mostrar senha'}
                 >
                   <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
                 </button>
@@ -121,16 +124,26 @@ const Login = () => {
               <span style={{ color: '#306AFF' }}>Esqueceu a senha?</span>
             </p>
           </NavLink>
-          {!loading && <button className={styles.btn}>LOGIN</button>}
+          {!loading && <button className={styles.btn} aria-label="Botão de login">LOGIN</button>}
           <div className={styles.socialLogin}>
-            <button className={styles.btn} type="button" onClick={handleGoogleSignIn}>
+            <button
+              className={styles.btn}
+              type="button"
+              onClick={handleGoogleSignIn}
+              aria-label='Entrar com Google'
+            >
               <FontAwesomeIcon icon={['fab', 'google']} />
             </button>
-            <button className={styles.btn} type="button" onClick={handleFacebookSignIn}>
+            <button
+              className={styles.btn}
+              type="button"
+              onClick={handleFacebookSignIn}
+              aria-label='Entrar com Facebook'
+            >
               <FontAwesomeIcon icon={['fab', 'facebook']} />
             </button>
           </div>
-          {loading && <button className={styles.btn} disabled>Carregando...</button>}
+          {loading && <button className={styles.btn} disabled aria-label="Carregando">Carregando...</button>}
           {error && <p className='error'>{error}</p>}
           <div className={styles.socialLogin}>
             <p className={styles.ou}>
@@ -138,18 +151,18 @@ const Login = () => {
             </p>
           </div>
           <NavLink to="../Register">
-            <button className={styles.btn}>REGISTRAR-SE</button>
+            <button className={styles.btn} aria-label="Registrar-se">REGISTRAR-SE</button>
           </NavLink>
         </form>
       </div>
       <NavLink to="../Home">
-        <div className={styles.content6}>
+        <div className={styles.content6} aria-label="Voltar para a página inicial">
           <FontAwesomeIcon icon="fa-solid fa-right-to-bracket" className={styles.iconevoltar} />
           VOLTAR
         </div>
       </NavLink>
     </div>
-  );
+  );  
 };
 
 export default Login;
