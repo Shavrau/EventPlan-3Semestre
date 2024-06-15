@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './RecoverPass.module.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { NavLink } from 'react-router-dom';
 
 const RecoverPass = () => {
   const [email, setEmail] = useState('');
@@ -45,6 +47,12 @@ return (
             {message && <p className={`mt-3 text-success ${styles.textSuccess}`}>{message}</p>}
             {error && <p className={`mt-3 text-danger ${styles.textDanger}`}>{error}</p>}
         </div>
+        <NavLink to="../Login">
+        <div className={styles.content6} aria-label="Voltar para a página de login">
+          <FontAwesomeIcon icon="fa-solid fa-right-to-bracket" className={styles.iconevoltar} />
+          VOLTAR
+        </div>
+      </NavLink>
     </div>
 );
 };

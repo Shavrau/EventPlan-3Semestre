@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { userAuthentication } from '../../hooks/userAuthentication';
 import styles from './Register.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
@@ -14,6 +15,8 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const { createUser, error: authError, loading } = userAuthentication();
   const navigate = useNavigate();
@@ -50,6 +53,14 @@ const Register = () => {
     }
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
+
   return (
     <div className={styles.container}>
       <ToastContainer />
@@ -65,6 +76,7 @@ const Register = () => {
               onChange={(e) => setFullName(e.target.value)}
               placeholder="Digite seu nome completo"
               className={styles.input}
+              aria-label="Nome completo"
             />
           </label>
           <label className={styles.label}>
@@ -77,6 +89,7 @@ const Register = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Digite seu email"
               className={styles.input}
+              aria-label="Email"
             />
           </label>
           <label className={styles.label}>
@@ -89,33 +102,60 @@ const Register = () => {
               onChange={(e) => setPhone(e.target.value)}
               placeholder="Digite seu telefone"
               className={styles.input}
+              aria-label="Telefone"
             />
           </label>
           <label className={styles.label}>
             <span>Senha:</span>
-            <input
-              type="password"
-              name="Password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Digite sua senha"
-              className={styles.input}
-            />
+            <div className={styles.passwordInputContainer}>
+              <input
+                type={showPassword ? 'text' : 'password'}
+                name="Password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Digite sua senha"
+                className={styles.input}
+                aria-label="Senha"
+              />
+              {password && (
+                <button
+                  type="button"
+                  className={styles.passwordVisibilityToggle}
+                  onClick={togglePasswordVisibility}
+                  aria-label={showPassword ? 'Esconder senha' : 'Mostrar senha'}
+                >
+                  <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                </button>
+              )}
+            </div>
           </label>
           <label className={styles.label}>
             <span>Confirme sua senha:</span>
-            <input
-              type="password"
-              name="ConfirmPassword"
-              required
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              placeholder="Confirme sua senha"
-              className={styles.input}
-            />
+            <div className={styles.passwordInputContainer}>
+              <input
+                type={showConfirmPassword ? 'text' : 'password'}
+                name="ConfirmPassword"
+                required
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                placeholder="Confirme sua senha"
+                className={styles.input}
+                aria-label="Confirmar senha"
+              />
+              {confirmPassword && (
+                <button
+                  type="button"
+                  className={styles.passwordVisibilityToggle}
+                  onClick={toggleConfirmPasswordVisibility}
+                  aria-label={showConfirmPassword ? 'Esconder senha de confirmação' : 'Mostrar senha de confirmação'}
+                >
+                  <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
+                </button>
+              )}
+            </div>
           </label>
-          <button className={styles.btn} disabled={loading}>
+          <button className={styles.btn} disabled={loading} aria-label="Botão de registrar">
             {loading ? 'Carregando...' : 'REGISTRAR-SE'}
           </button>
           {error && <p>{error}</p>}
@@ -126,7 +166,7 @@ const Register = () => {
         </form>
       </div>
       <NavLink to="../Login">
-        <div className={styles.content6}>
+        <div className={styles.content6} aria-label="Voltar para a página de login">
           <FontAwesomeIcon icon="fa-solid fa-right-to-bracket" className={styles.iconevoltar} />
           VOLTAR
         </div>

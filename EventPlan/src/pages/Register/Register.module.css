@@ -23,6 +23,24 @@ h1 {
     position: relative;
 }
 
+.passwordInputContainer {
+    position: relative;
+}
+  
+.passwordVisibilityToggle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -80px; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    color: #000000;
+}
+
 .label {
     font-size: 24px;
     font-weight: bold;
@@ -72,14 +90,20 @@ h1 {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
     box-sizing: border-box;
-    left:42px;
+    left: 42px;
+    transition: transform 0.2s ease; 
+}
+
+.btn:hover {
+    transform: scale(1.1); 
+
 }
 
 .content6 {
     width: 140px;
     height: 40px;
     background-color: white;
-    position: fixed; 
+    position: fixed;
     top: 94px;
     left: 15px;
     font-family: 'Inter', sans-serif;
@@ -95,6 +119,11 @@ h1 {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
     box-sizing: border-box;
+    transition: transform 0.2s ease; 
+}
+
+.content6:hover {
+    transform: scale(1.1); 
 }
 
 .iconevoltar {
@@ -127,11 +156,11 @@ h1 {
 .terms span::after {
     content: '';
     display: block;
-    width: calc(100% - 0px); /* Ajuste conforme necessário */
+    width: calc(100% - 0px); 
     height: 1px;
     background-color: #306AFF;
     position: absolute;
-    bottom: -2px; /* Ajustado ligeiramente para melhor alinhamento visual */
+    bottom: -2px; 
     left: 50%;
     transform: translateX(-50%);
 }
@@ -144,6 +173,11 @@ h1 {
 
     .register {
         margin-top: -30px;
+    }
+
+    .passwordVisibilityToggle {
+        left: 300px;
+        font-size: 25px;
     }
 
     .label {
@@ -236,6 +270,10 @@ h1 {
         margin-left: -25px;
     }
 
+    .passwordVisibilityToggle {
+        font-size: 25px;
+    }
+
     .register {
         padding-top: 50px;
     }
@@ -284,6 +322,10 @@ h1 {
         height: 660px;
     }
 
+    .passwordVisibilityToggle {
+        left: 300px;
+    }
+
     .label {
         font-size: 18px; 
     }
@@ -326,6 +368,10 @@ h1 {
 @media only screen and (max-width: 470px) {
     .container {
         height: 660px;
+    }
+
+    .passwordVisibilityToggle {
+        left: 260px;
     }
 
     .label {
@@ -373,6 +419,10 @@ h1 {
         margin-left: -50px;
     }
 
+    .passwordVisibilityToggle {
+        left: 260px;
+    }
+
     .label {
         font-size: 16px; 
     }
@@ -415,7 +465,12 @@ h1 {
 @media only screen and (max-width: 340px) {
     .container { 
         height: 560px;
-        margin-left: -40px;
+        margin-left: -60px;
+    }
+
+    .passwordVisibilityToggle {
+        left: 200px;
+        font-size: 20px;
     }
 
     .label {
@@ -426,12 +481,11 @@ h1 {
         width: 180px;
     }
     
-
     .btn {
         font-size: 5.5px; 
         width: 70px; 
         height: 25px;
-        left: 65px;
+        left: 70px;
     }
 
     .content6 {
@@ -460,6 +514,11 @@ h1 {
     .container { 
         height: 540px;
         margin-left: -40px;
+    }
+
+    .passwordVisibilityToggle {
+        left: 62px;
+        font-size: 20px;
     }
     
         .label {
@@ -504,6 +563,10 @@ h1 {
     .container { 
         height: 500px;
         margin-left: -40px;
+    }
+
+    .passwordVisibilityToggle {
+        left: -22px;
     }
 
     .label {
