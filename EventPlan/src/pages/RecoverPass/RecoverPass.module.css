@@ -29,3 +29,117 @@
     color: #dc3545;
   }
   
+  .content6 {
+    width: 140px;
+    height: 40px;
+    background-color: white;
+    position: fixed;
+    top: 94px;
+    left: 15px;
+    font-family: 'Inter', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    box-sizing: border-box;
+    transition: transform 0.2s ease; 
+}
+
+.content6:hover {
+    transform: scale(1.1); 
+}
+
+.iconevoltar {
+    font-size: 21px;
+    width: 30px;
+    height: 30px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1px;
+    transform: scaleX(-1);
+}
+
+@media only screen and (max-width: 650px) {
+  .content6 {
+      width: 35px;
+      height: 35px;
+      top: 94px;
+      left: 15px;
+      font-size: 0; 
+  }
+
+  .content6 .iconevoltar {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+      margin-top: 0;
+      margin-right: 0px;
+      transform: scaleX(-1);
+  }
+}
+
+@media only screen and (max-width: 438px) {
+  .content6 {
+      width: 35px;
+      height: 35px;
+      top: 70px;
+      left: 15px;
+      font-size: 0; 
+  }
+
+  .content6 .iconevoltar {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+      margin-top: 0;
+      margin-right: 0px;
+      transform: scaleX(-1);
+  }
+}
+
+@media only screen and (max-width: 310px) {
+  .content6 {
+      width: 35px;
+      height: 35px;
+      top: 70px;
+      left: 15px;
+      font-size: 0; 
+  }
+
+  .content6 .iconevoltar {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+      margin-top: 0;
+      margin-right: 0px;
+      transform: scaleX(-1);
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .content6 {
+      width: 35px;
+      height: 35px;
+      top: 70px;
+      left: 15px;
+      font-size: 0; 
+  }
+
+  .content6 .iconevoltar {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+      margin-top: 0;
+      margin-right: 0px;
+      transform: scaleX(-1);
+  }
+}

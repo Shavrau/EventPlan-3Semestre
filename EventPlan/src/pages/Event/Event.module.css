@@ -48,7 +48,12 @@
     height: 90px;
     width: auto;
     padding: 20px;
-    box-sizing: border-box;
+    transition: transform 0.2s ease; 
+}
+
+.cartIcon:hover {
+    transform: scale(1.1); 
+
 }
 
 .marginTop20 {

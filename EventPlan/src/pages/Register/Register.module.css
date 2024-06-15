@@ -90,14 +90,20 @@ h1 {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
     box-sizing: border-box;
-    left:42px;
+    left: 42px;
+    transition: transform 0.2s ease; 
+}
+
+.btn:hover {
+    transform: scale(1.1); 
+
 }
 
 .content6 {
     width: 140px;
     height: 40px;
     background-color: white;
-    position: fixed; 
+    position: fixed;
     top: 94px;
     left: 15px;
     font-family: 'Inter', sans-serif;
@@ -113,6 +119,11 @@ h1 {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
     box-sizing: border-box;
+    transition: transform 0.2s ease; 
+}
+
+.content6:hover {
+    transform: scale(1.1); 
 }
 
 .iconevoltar {
