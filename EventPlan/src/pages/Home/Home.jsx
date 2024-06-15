@@ -10,11 +10,11 @@ const Home = () => {
 
   useEffect(() => {
     const fetchEventos = async () => {
-      const querySnapshot = await getDocs(collection(db, "Eventos")); 
+      const querySnapshot = await getDocs(collection(db, "Eventos"));
       const eventsList = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       setEventos(eventsList);
     };
-  
+
     fetchEventos();
   }, []);
 
@@ -24,21 +24,21 @@ const Home = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://placehold.co/1360x480" 
+            src="https://placehold.co/1360x480"
             alt="First slide"
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://placehold.co/1360x480" 
+            src="https://placehold.co/1360x480"
             alt="Second slide"
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://placehold.co/1360x480" 
+            src="https://placehold.co/1360x480"
             alt="Third slide"
           />
         </Carousel.Item>
