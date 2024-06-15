@@ -55,7 +55,7 @@ const Footer = () => {
           <Col md="4" className={`d-flex justify-content-center align-items-center`}>
             <ul>
               <li>
-                <NavLink to="/Ajuda" className={styles.ajuda}>Ajuda</NavLink>
+                <NavLink to="/FAQ" className={styles.ajuda}>Ajuda</NavLink>
                 <li>
                   <p href="#" className={styles.ajuda1}>Central de ajuda</p>
                   <p href="#" className={styles.ajuda1}>Compradores e participantes</p>
