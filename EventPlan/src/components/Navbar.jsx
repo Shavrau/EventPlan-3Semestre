@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Navbar as BootstrapNavbar, Nav, Offcanvas } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faCircleHalfStroke, faSearch, faUser, faHome, faInfoCircle, faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Navbar.module.css";
 import Logo from "../assets/Logo.svg";
 import { NavLink } from "react-router-dom";
@@ -29,7 +30,7 @@ const Navbar = () => {
               onClick={handleShow}
             >
               <FontAwesomeIcon
-                icon="fa-solid fa-bars"
+                icon={faBars}
                 style={{ fontSize: iconSize }}
                 className="iconLeft"
               />
@@ -37,7 +38,7 @@ const Navbar = () => {
             <BootstrapNavbar.Collapse id="basic-navbar-nav"></BootstrapNavbar.Collapse>
             <NavLink to="#darkmode" className="text-light">
               <FontAwesomeIcon
-                icon="fa-solid fa-circle-half-stroke"
+                icon={faCircleHalfStroke}
                 style={{ fontSize: iconSize, marginRight: "20px" }}
               />
             </NavLink>
@@ -51,12 +52,12 @@ const Navbar = () => {
           </div>
           <div className={`ml-auto d-flex align-items-center ${styles.rightItems}`}>
             <FontAwesomeIcon
-              icon="fa-solid fa-search"
+              icon={faSearch}
               style={{ fontSize: iconSize, marginRight: "20px" }}
             />
             <NavLink to="login" className="d-none d-lg-block">
               <FontAwesomeIcon
-                icon="fa-regular fa-user"
+                icon={faUser}
                 style={{ fontSize: iconSize }}
                 className={styles.whiteIcon}
               />
@@ -71,9 +72,18 @@ const Navbar = () => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="flex-column">
-            <NavLink to="/" >Home</NavLink>
-            <NavLink to="/About">About</NavLink>
-            <NavLink to="/Event">Eventos</NavLink>
+            <NavLink to="/" onClick={handleClose}>
+              <FontAwesomeIcon icon={faHome} style={{ marginRight: "10px" }} />
+              Home
+            </NavLink>
+            <NavLink to="/about" onClick={handleClose}>
+              <FontAwesomeIcon icon={faInfoCircle} style={{ marginRight: "10px" }} />
+              About
+            </NavLink>
+            <NavLink to="/event" onClick={handleClose}>
+              <FontAwesomeIcon icon={faCalendarAlt} style={{ marginRight: "10px" }} />
+              Eventos
+            </NavLink>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
