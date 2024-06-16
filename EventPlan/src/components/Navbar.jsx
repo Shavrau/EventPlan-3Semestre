@@ -6,10 +6,13 @@ import styles from "./Navbar.module.css";
 import Logo from "../assets/Logo.svg";
 import { NavLink } from "react-router-dom";
 import LanguageSelector from "./Traducao/LanguageSelector";
+import { useAuth } from "../context/AuthContext";
+
 
 const Navbar = () => {
   const iconSize = "1.25rem";
   const [show, setShow] = useState(false);
+  const { user } = useAuth();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -57,13 +60,23 @@ const Navbar = () => {
               icon={faSearch}
               style={{ fontSize: iconSize, marginRight: "20px" }}
             />
-            <NavLink to="login" className="d-none d-lg-block">
-              <FontAwesomeIcon
-                icon={faUser}
-                style={{ fontSize: iconSize }}
-                className={styles.whiteIcon}
-              />
-            </NavLink>
+            {user ? (
+              <NavLink to="/profile" className="d-none d-lg-block">
+                <FontAwesomeIcon
+                  icon={faUser}
+                  style={{ fontSize: iconSize }}
+                  className={styles.whiteIcon}
+                />
+              </NavLink>
+            ) : (
+              <NavLink to="/login" className="d-none d-lg-block">
+                <FontAwesomeIcon
+                  icon={faUser}
+                  style={{ fontSize: iconSize }}
+                  className={styles.whiteIcon}
+                />
+              </NavLink>
+            )}
           </div>
         </div>
       </BootstrapNavbar>

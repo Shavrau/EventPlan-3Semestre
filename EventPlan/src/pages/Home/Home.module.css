@@ -4,6 +4,11 @@
   object-fit: cover;
 }
 
+.carouselContainer {
+  padding-top: 4rem;
+
+}
+
 @media (min-width: 1360px) {
   .carouselContainer img {
     height: 480px;
