@@ -82,24 +82,6 @@
 }
 
 @media only screen and (max-width: 1300px) {
-  .content6 {
-    width: 100px;
-    height: 30px;
-    top: 94px;
-    left: 15px;
-    font-size: 15px;
-  }
-  
-  .iconevoltar {
-    font-size: 20px;
-    width: 20px;
-    height: 20px;
-    margin-top: 0;
-    margin-right: 3px;
-    transform: scaleX(-1);
-  }
-  
-  
   .index .texto-sobre p {
     font-size: 15px;
   }
@@ -207,6 +189,7 @@ font-size: 15px;
         margin-right: 0px;
         transform: scaleX(-1);
     }
+    
     .index .titulo-sobre h1 {
       font-size: 22px;
     }
@@ -243,6 +226,7 @@ font-size: 15px;
     margin-right: 0px;
     transform: scaleX(-1);
 }
+
 .index .titulo-sobre h1 {
   font-size: 20px;
 }
@@ -319,6 +303,7 @@ font-size: 15px;
             margin-top: 0;
             margin-right: 0px;
             transform: scaleX(-1);
+        }
 
             .index {
               padding-top: 70px;
@@ -339,26 +324,26 @@ font-size: 15px;
             .Nome {
               display: none;
             }
-        }
 
     @media only screen and (max-width: 100px) {
     
-        .content6 {
-            width: 10px;
-            height: 10px;
-            top: 70px;
-            left: 15px;
-            font-size: 0; 
-        }
-    
-        .content6 .iconevoltar {
-            font-size: 5px;
-            width: 10px;
-            height: 10px;
-            margin-top: 5px;
-            margin-right: 0px;
-            transform: scaleX(-1);
-        }
+      .content6 {
+        width: 20px;
+        height: 20px;
+        top: 70px;
+        left: 15px;
+        font-size: 0; 
+    }
+
+    .content6 .iconevoltar {
+        font-size: 10px;
+        width: 10px;
+        height: 10px;
+        margin-top: 0;
+        margin-right: 0px;
+        transform: scaleX(-1);
+    }
+
         .index {
           padding-top: 70px;
         }

@@ -25,11 +25,11 @@ main {
     padding: 0;
   } 
 
-.content6 {
+  .content6 {
     width: 140px;
     height: 40px;
     background-color: white;
-    position: absolute;
+    position: fixed;
     top: 94px;
     left: 15px;
     font-family: 'Inter', sans-serif;
@@ -45,10 +45,14 @@ main {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
     box-sizing: border-box;
-}
-
-
-.iconevoltar {
+    transition: transform 0.2s ease; 
+  }
+  
+  .content6:hover {
+    transform: scale(1.1); 
+  }
+  
+  .iconevoltar {
     font-size: 21px;
     width: 30px;
     height: 30px;
@@ -57,8 +61,7 @@ main {
     align-items: center;
     justify-content: center;
     margin-right: 5px;
-    transform: scaleX(-1);
-}
+  }
 
 .perfil {
     display: flex;
@@ -164,7 +167,13 @@ main {
     border-radius: 10px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    transition: transform 0.2s ease;
 }
+
+.content3:hover {
+    transform: translate(-50%, -50%) scale(1.05); 
+}
+
 
 .content4 {
     width: 1000px;
@@ -199,6 +208,11 @@ main {
     border-radius: 10px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    transition: transform 0.2s ease;
+}
+
+.content5:hover {
+    transform: translate(-50%, -50%) scale(1.05); 
 }
 
 .galleryContainer {
@@ -233,23 +247,6 @@ main {
         max-width: 100%; 
         height: 240px;
         padding: 10px;
-    }
-
-    .content6 {
-        width: 140px;
-        height: 40px;
-        top: 40%;
-        left: 5%;
-        font-size: 21px;
-    }
-
-    .iconevoltar {
-        font-size: 21px;
-        width: 30px;
-        height: 30px;
-        margin-top: 0;
-        margin-right: 5px;
-        transform: scaleX(-1);
     }
 
     .perfil {
@@ -355,16 +352,15 @@ main {
         top: 94px;
         left: 15px;
         font-size: 15px;
-    }
-
-    .iconevoltar {
+      }
+      
+      .iconevoltar {
         font-size: 20px;
         width: 20px;
         height: 20px;
         margin-top: 0;
         margin-right: 3px;
-        transform: scaleX(-1);
-    }
+      }
 
     .perfil {
         justify-content: flex-start; 
@@ -475,7 +471,6 @@ main {
         height: 20px;
         margin-top: 0;
         margin-right: 0px;
-        transform: scaleX(-1);
     }
 
     .perfil {
@@ -589,7 +584,6 @@ main {
         height: 20px;
         margin-top: 0;
         margin-right: 0px;
-        transform: scaleX(-1);
     }
 
     .perfil {
@@ -676,6 +670,24 @@ main {
     }
 }
 
+@media only screen and (max-width: 338px) {
+    .content6 {
+      width: 35px;
+      height: 35px;
+      top: 70px;
+      left: 15px;
+      font-size: 0; 
+  }
+  
+  .content6 .iconevoltar {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+      margin-top: 0;
+      margin-right: 0px;
+  }
+}
+
 @media only screen and (max-width: 250px) {
     main {
         height: 470px;
@@ -696,14 +708,13 @@ main {
         left: 15px;
         font-size: 0; 
     }
-
+    
     .content6 .iconevoltar {
         font-size: 20px;
         width: 20px;
         height: 20px;
         margin-top: 0;
         margin-right: 0px;
-        transform: scaleX(-1);
     }
 
     .perfil {
@@ -813,7 +824,6 @@ main {
             height: 10px;
             margin-top: 0;
             margin-right: 0px;
-            transform: scaleX(-1);
         }
     
         .perfil {
@@ -899,20 +909,19 @@ main {
         }
     
         .content6 {
-            width: 10px;
-            height: 10px;
+            width: 20px;
+            height: 20px;
             top: 70px;
             left: 15px;
             font-size: 0; 
         }
     
         .content6 .iconevoltar {
-            font-size: 5px;
+            font-size: 10px;
             width: 10px;
             height: 10px;
-            margin-top: 5px;
+            margin-top: 0;
             margin-right: 0px;
-            transform: scaleX(-1);
         }
     
         .perfil {

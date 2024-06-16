@@ -41,9 +41,11 @@ const Profile = () => {
               <FontAwesomeIcon icon="fa-solid fa-pen" />
             </div>
           </div>
+          <NavLink to="../Profile">
           <div className={styles.content3}>
             MEUS EVENTOS
           </div>
+          </NavLink>
         </div>
 
         <div className={styles.content4}>
@@ -60,9 +62,11 @@ const Profile = () => {
                 <img src={RobertaSaImg} alt="Roberta Sá" />
               </div>
             </div>
+            <NavLink to="../Profile">
             <div className={styles.content5}>
               VER MAIS
             </div>
+            </NavLink>
           </div>
         </div>
         {user ? (
