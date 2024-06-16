@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 820px;
+    height: 835px;
     margin-left: -30px;
     padding-top: 100px;
 }
@@ -16,12 +16,12 @@
 .passwordInputContainer {
     position: relative;
 }
-  
+
 .passwordVisibilityToggle {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: -100px; 
+    right: -100px;
     background: none;
     border: none;
     cursor: pointer;
@@ -81,26 +81,26 @@
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
     box-sizing: border-box;
     left: 42px;
-    transition: transform 0.2s ease; 
+    transition: transform 0.2s ease;
 }
 
 .btn:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
 
 }
 
 .socialLogin {
-    margin-left: -5px;
+    margin-left: -7px;
     display: flex;
     align-items: center;
-  }
-  
-  .socialLogin button {
-    margin-top: 10px; 
-  }
-  
+}
 
-  .content6 {
+.socialLogin button {
+    margin-top: 10px;
+}
+
+
+.content6 {
     width: 140px;
     height: 40px;
     background-color: white;
@@ -121,13 +121,13 @@
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
     box-sizing: border-box;
     transition: transform 0.2s ease; 
-}
-
-.content6:hover {
+  }
+  
+  .content6:hover {
     transform: scale(1.1); 
-}
-
-.iconevoltar {
+  }
+  
+  .iconevoltar {
     font-size: 21px;
     width: 30px;
     height: 30px;
@@ -135,15 +135,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 1px;
+    margin-right: 5px;
     transform: scaleX(-1);
-}
+  }
 
 
 .terms {
     text-align: center;
-    font-size: 18px;
-    margin-left: 150px;
+    font-size: 24px;
+    margin-left: 96px;
     font-weight: bold;
     white-space: nowrap;
     position: relative;
@@ -157,22 +157,22 @@
 .terms span::after {
     content: '';
     display: block;
-    width: calc(100% - 1px); 
+    width: calc(100% - 1px);
     height: 1px;
     background-color: #306AFF;
     position: absolute;
-    bottom: 1px; 
+    bottom: 1px;
     left: 50%;
     transform: translateX(-50%);
-} 
+}
 
 .ou {
     font-weight: bold;
     display: inline-block;
     position: relative;
     font-size: 24px;
-    top: 5px;
-    margin-left: 80px;
+    top: 3px;
+    margin-left: 79px;
 }
 
 .ou::after {
@@ -184,84 +184,117 @@
     position: absolute;
     bottom: 1px;
     left: 0;
-} 
+}
 
 @media only screen and (max-width: 1300px) {
     .container {
-        height: 750px;
+        height: 785px;
         margin-left: -30px;
     }
 }
 
 @media only screen and (max-width: 920px) {
     .container {
-        height: 750px;
+        height: 822px;
         margin-left: -30px;
     }
 }
 
 @media only screen and (max-width: 768px) {
     .container {
-        height: 830px;
+        height: 780px;
         margin-left: -90px;
     }
 
     .passwordVisibilityToggle {
-        left: 320px;
+        left: 300px;
         font-size: 25px;
     }
 
     .socialLogin {
-        margin-left: 35px;
+        margin-left: 11px;
         display: flex;
         align-items: center;
     }
-      
-      .socialLogin button {
-        margin-top: 10px; 
+
+    .socialLogin button {
+        margin-top: 10px;
     }
-      
+
+    .login {
+        padding-top: 50px;
+    }
+
+    .label {
+        font-size: 20px;
+    }
+
+    .input {
+        width: 280px;
+    }
 
     .btn {
-        font-size: 19.5px; 
+        font-size: 19.5px;
+        width: 200px;
+        height: 40px;
+        left: 52px;
     }
 
+    .content6 {
+        width: 100px;
+        height: 30px;
+        top: 94px;
+        left: 15px;
+        font-size: 15px;
+      }
+      
+      .iconevoltar {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+        margin-right: 3px;
+        transform: scaleX(-1);
+      }
+
     .terms {
-        margin-left: 152px;
+        margin-left: 114px;
+        font-size: 20px;
     }
 
     .ou {
-        margin-left: 80px;
+        font-size: 20px;
+        margin-left: 99px;
     }
 }
 
 @media only screen and (max-width: 650px) {
     .container {
-        height: 710px;
+        height: 740px;
         margin-left: -75px;
     }
-          
+
     .passwordVisibilityToggle {
-        left: 320px;
+        left: 300px;
     }
 
     .socialLogin {
-        margin-left: -55px;
+        margin-left: -43px;
         display: flex;
         align-items: center;
     }
-      
-      .socialLogin button {
-        margin-top: 10px; 
+
+    .socialLogin button {
+        margin-top: 10px;
     }
 
     .label {
-        font-size: 18px; 
+        font-size: 18px;
     }
 
     .btn {
-        font-size: 13.5px; 
-        width: 140px; 
+        font-size: 13.5px;
+        width: 140px;
         height: 35px;
         left: 80px;
     }
@@ -284,19 +317,19 @@
     }
 
     .terms {
-        font-size: 16px;
-        margin-left: 172px;
+        font-size: 18px;
+        margin-left: 132px;
     }
 
     .ou {
         font-size: 18px;
-        margin-left: 160px;
+        margin-left: 155px;
     }
 }
 
-@media only screen and (max-width: 438px) {
+@media only screen and (max-width: 470px) {
     .container {
-        height: 755px;
+        height: 730px;
         margin-left: -70px;
     }
 
@@ -309,13 +342,13 @@
         display: flex;
         align-items: center;
     }
-      
-      .socialLogin button {
-        margin-top: 10px; 
+
+    .socialLogin button {
+        margin-top: 10px;
     }
 
     .label {
-        font-size: 16px; 
+        font-size: 16px;
     }
 
     .input {
@@ -323,8 +356,8 @@
     }
 
     .btn {
-        font-size: 11.5px; 
-        width: 120px; 
+        font-size: 11.5px;
+        width: 120px;
         height: 35px;
         left: 50px;
     }
@@ -348,37 +381,38 @@
 
     .terms {
         font-size: 16px;
-        margin-left: 70px;
+        margin-left: 71px;
     }
 
     .ou {
         font-size: 16px;
-        left: -30px;
+        left: -28.5px;
     }
 }
 
-@media only screen and (max-width: 310px) {
+@media only screen and (max-width: 340px) {
     .container {
-        height: 720px;
+        height: 580px;
         margin-left: -45px;
     }
 
     .passwordVisibilityToggle {
-        left: 140px;
+        left: 138px;
+        font-size: 20px;
     }
 
     .socialLogin {
-        margin-left: -35px;
+        margin-left: -34px;
         display: flex;
         align-items: center;
     }
-      
-      .socialLogin button {
-        margin-top: 10px; 
+
+    .socialLogin button {
+        margin-top: 10px;
     }
 
     .label {
-        font-size: 12px; 
+        font-size: 12px;
     }
 
     .input {
@@ -386,8 +420,8 @@
     }
 
     .btn {
-        font-size: 5.5px; 
-        width: 70px; 
+        font-size: 5.5px;
+        width: 70px;
         height: 25px;
         left: 45px;
     }
@@ -399,7 +433,7 @@
         left: 15px;
         font-size: 0; 
     }
-
+    
     .content6 .iconevoltar {
         font-size: 20px;
         width: 20px;
@@ -416,33 +450,33 @@
 
     .ou {
         font-size: 12px;
-        left: -35px;
+        left: -33px;
     }
 }
 
-@media only screen and (max-width: 280px) {
+@media only screen and (max-width: 240px) {
     .container {
-        height: 710px;
+        height: 570px;
         margin-left: -45px;
     }
 
     .passwordVisibilityToggle {
-        left: 50px;
+        left: 48px;
         font-size: 20px;
     }
 
     .socialLogin {
-        margin-left: -19px;
+        margin-left: -17px;
         display: flex;
         align-items: center;
     }
-      
-      .socialLogin button {
-        margin-top: 10px; 
+
+    .socialLogin button {
+        margin-top: 10px;
     }
 
     .label {
-        font-size: 7px; 
+        font-size: 7px;
     }
 
     .input {
@@ -450,8 +484,8 @@
     }
 
     .btn {
-        font-size: 5.5px; 
-        width: 60px; 
+        font-size: 5.5px;
+        width: 60px;
         height: 25px;
         left: 25px;
     }
@@ -463,7 +497,7 @@
         left: 15px;
         font-size: 0; 
     }
-
+    
     .content6 .iconevoltar {
         font-size: 20px;
         width: 20px;
@@ -475,23 +509,87 @@
 
     .terms {
         font-size: 7px;
-        margin-left: 34px;
+        margin-left: 35px;
     }
 
     .ou {
         font-size: 7px;
-        left: -55px;
+        left: -52.5px;
     }
 }
 
 .socialLogin {
     display: flex;
     justify-content: center;
-    margin-top: 20px; 
+    margin-top: 20px;
 }
 
 .socialLogin .btn {
     margin: 0 5px;
+}
+
+@media only screen and (max-width: 150px) {
+    .container {
+        height: 480px;
+        margin-left: -5px;
+    }
+
+    .passwordVisibilityToggle {
+        left: -40px;
+        font-size: 20px;
+        display: none;
+    }
+
+    .socialLogin {
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .socialLogin button {
+        margin-top: 10px;
+    }
+
+    .label {
+        font-size: 5px;
+    }
+
+    .input {
+        width: 10px;
+    }
+
+    .btn {
+        font-size: 2.5px;
+        width: 35px;
+        height: 15px;
+        left: 0px;
+    }
+
+    .content6 {
+        width: 20px;
+        height: 20px;
+        top: 70px;
+        left: 15px;
+        font-size: 0; 
+    }
+
+    .content6 .iconevoltar {
+        font-size: 10px;
+        width: 10px;
+        height: 10px;
+        margin-top: 0;
+        margin-right: 0px;
+        transform: scaleX(-1);
+    }
+
+    .terms {
+        font-size: 3px;
+        margin-left: 2px;
+    }
+
+    .ou {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -499,7 +597,7 @@
         flex-direction: column;
         align-items: center;
     }
-    
+
     .socialLogin .btn {
         margin: 5px 0;
     }
@@ -507,5 +605,4 @@
 
 .btn {
     margin-top: 20px;
-  }
-  
+}
