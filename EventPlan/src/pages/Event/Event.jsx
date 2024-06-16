@@ -7,10 +7,12 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Chat from '../../components/Chat/Chat';
 import EventRating from '../../components/Avaliacao/Avaliacao';
+import FavoriteEvents from '../../components/Favoritos/Favoritos';
 
 const Event = () => {
   const { id } = useParams();
   const [eventData, setEventData] = useState(null);
+  const userId = "user-id";
 
   useEffect(() => {
     const fetchEvent = async () => {
@@ -73,6 +75,11 @@ const Event = () => {
       <Row>
         <Col>
           <EventRating eventId={id} />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <FavoriteEvents userId={userId} />
         </Col>
       </Row>
     </Container>
