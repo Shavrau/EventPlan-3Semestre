@@ -10,9 +10,9 @@ import EventRating from '../../components/Avaliacao/Avaliacao';
 import FavoriteEvents from '../../components/Favoritos/Favoritos';
 
 const Event = () => {
-  const { id } = useParams();
+  const { id } = useParams(); // id é o eventId
   const [eventData, setEventData] = useState(null);
-  const userId = "user-id";
+  const userId = "user-id"; // Atualize para o ID real do usuário se necessário
 
   useEffect(() => {
     const fetchEvent = async () => {
@@ -79,7 +79,7 @@ const Event = () => {
       </Row>
       <Row>
         <Col>
-          <FavoriteEvents userId={userId} />
+          <FavoriteEvents userId={userId} eventId={id} eventName={eventData.nome} />
         </Col>
       </Row>
     </Container>

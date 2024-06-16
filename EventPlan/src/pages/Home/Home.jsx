@@ -24,21 +24,21 @@ const Home = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://placehold.co/1360x480"
+            src="https://firebasestorage.googleapis.com/v0/b/eventplan-30036.appspot.com/o/Design01.svg?alt=media&token=e0cc518f-049b-4cbb-938e-dbeb7b877053"
             alt="First slide"
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://placehold.co/1360x480"
+            src="https://firebasestorage.googleapis.com/v0/b/eventplan-30036.appspot.com/o/Design2.svg?alt=media&token=7518c2e1-ad68-428b-82db-64e5f020e96c"
             alt="Second slide"
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://placehold.co/1360x480"
+            src="https://firebasestorage.googleapis.com/v0/b/eventplan-30036.appspot.com/o/Design3.svg?alt=media&token=c2da9f55-7348-46ba-8095-af8f5ce8657e"
             alt="Third slide"
           />
         </Carousel.Item>
