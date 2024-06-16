@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Chat from '../../components/Chat/Chat';
 import EventRating from '../../components/Avaliacao/Avaliacao';
 import FavoriteEvents from '../../components/Favoritos/Favoritos';
+import ImageUpload from '../../components/UploadImage/UploadImage';
+import UploadImage from '../../components/UploadImage/UploadImage';
 
 const Event = () => {
   const { id } = useParams(); // id é o eventId
@@ -80,6 +82,11 @@ const Event = () => {
       <Row>
         <Col>
           <FavoriteEvents userId={userId} eventId={id} eventName={eventData.nome} />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <UploadImage />
         </Col>
       </Row>
     </Container>
