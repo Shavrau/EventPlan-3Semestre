@@ -3,18 +3,17 @@ import { useParams } from 'react-router-dom';
 import { db } from '../../firebase/config';
 import { doc, getDoc } from 'firebase/firestore';
 import styles from './Event.module.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Chat from '../../components/Chat/Chat';
 import EventRating from '../../components/Avaliacao/Avaliacao';
 import FavoriteEvents from '../../components/Favoritos/Favoritos';
-import ImageUpload from '../../components/UploadImage/UploadImage';
 import UploadImage from '../../components/UploadImage/UploadImage';
 
 const Event = () => {
-  const { id } = useParams(); // id é o eventId
+  const { id } = useParams();
   const [eventData, setEventData] = useState(null);
-  const userId = "user-id"; // Atualize para o ID real do usuário se necessário
+  const userId = "user-id"; 
 
   useEffect(() => {
     const fetchEvent = async () => {
@@ -51,8 +50,8 @@ const Event = () => {
       <Row>
         <Col>
           <div className={styles.dateVenue}>
-            <p><FontAwesomeIcon icon="fa-regular fa-calendar" /> {eventData.data}</p>
-            <p><FontAwesomeIcon icon="fa-solid fa-map" /> {eventData.local}</p>
+            <p><FontAwesomeIcon icon={['far', 'calendar']} /> {eventData.data}</p>
+            <p><FontAwesomeIcon icon={['fas', 'map-marker-alt']} /> {eventData.local}</p>
           </div>
         </Col>
       </Row>
@@ -65,7 +64,7 @@ const Event = () => {
         </Col>
         <Col md={2}>
           <div className={styles.cartIcon}>
-            <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
+            <FontAwesomeIcon icon={['fas', 'shopping-cart']} />
           </div>
         </Col>
       </Row>
@@ -81,7 +80,12 @@ const Event = () => {
       </Row>
       <Row>
         <Col>
-          <FavoriteEvents userId={userId} eventId={id} eventName={eventData.nome} />
+          <OverlayTrigger
+            placement="top"
+            overlay={<Tooltip id="tooltip-favorite">Adicionar aos Favoritos</Tooltip>}
+          >
+            <FavoriteEvents userId={userId} eventId={id} eventName={eventData.nome} />
+          </OverlayTrigger>
         </Col>
       </Row>
       <Row>
