@@ -15,6 +15,7 @@ import Footer from './components/Footer'
 import Profile from './pages/Profile/Profile'
 import RecoverPass from './pages/RecoverPass/RecoverPass'
 import FAQ from './pages/FAQ/FAQ'
+import Admin from './pages/Admin/Admin'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
             <Route path="*" element={<Navigate to="/" />} />
             <Route path="/recoverpass" element={<RecoverPass />} />
             <Route path="/FAQ" element={<FAQ />} />
+            <Route path="/Admin" element={<Admin />} />
           </Routes>
           </div>
           <Footer />
