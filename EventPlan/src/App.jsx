@@ -15,6 +15,7 @@ import Footer from './components/Footer'
 import Profile from './pages/Profile/Profile'
 import RecoverPass from './pages/RecoverPass/RecoverPass'
 import FAQ from './pages/FAQ/FAQ'
+import EventList from './pages/EventList/EventList.jsx'
 import Admin from './pages/Admin/Admin'
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             <Route path="*" element={<Navigate to="/" />} />
             <Route path="/recoverpass" element={<RecoverPass />} />
             <Route path="/FAQ" element={<FAQ />} />
+            <Route path="/eventlist" element={<EventList />} />
             <Route path="/Admin" element={<Admin />} />
           </Routes>
           </div>

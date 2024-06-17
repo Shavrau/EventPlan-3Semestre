@@ -6,7 +6,6 @@
 
 .carouselContainer {
   padding-top: 4rem;
-
 }
 
 @media (min-width: 1360px) {
@@ -22,4 +21,9 @@
   justify-content: center;
   gap: 1rem;
   padding: 1rem;
+}
+
+.verMaisContainer {
+  text-align: center;
+  margin-top: 20px;
 }
