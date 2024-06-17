@@ -21,7 +21,7 @@ const EventList = () => {
     fetchEvents();
   }, []);
 
-  const filteredEvents = filter === 'All' ? events : events.filter(event => event.category === filter);
+  const filteredEvents = filter === 'All' ? events : events.filter(event => event.tipo === filter);
 
   const indexOfLastEvent = currentPage * eventsPerPage;
   const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
@@ -38,10 +38,10 @@ const EventList = () => {
     <div className={styles.container}>
       <DropdownButton id="dropdown-basic-button" title={`Filter: ${filter}`} onSelect={handleSelect} className={styles.dropdown}>
         <Dropdown.Item eventKey="All">All</Dropdown.Item>
-        <Dropdown.Item eventKey="Music">Music</Dropdown.Item>
-        <Dropdown.Item eventKey="Sports">Sports</Dropdown.Item>
-        <Dropdown.Item eventKey="Technology">Technology</Dropdown.Item>
-        <Dropdown.Item eventKey="Art">Art</Dropdown.Item>
+        <Dropdown.Item eventKey="show">Show e Musica</Dropdown.Item>
+        <Dropdown.Item eventKey="games">Games e Tecnologia</Dropdown.Item>
+        <Dropdown.Item eventKey="comedia">Comedia e StandUp</Dropdown.Item>
+        <Dropdown.Item eventKey="curso">Art</Dropdown.Item>
       </DropdownButton>
       <div className={styles.cardContainer}>
         {currentEvents.map(event => (
