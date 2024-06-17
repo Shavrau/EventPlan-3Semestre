@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import { Link } from 'react-router-dom';
 import CardEvento from '../../components/CardEvento/CardEvento';
 import { db } from '../../firebase/config';
 import { collection, getDocs } from 'firebase/firestore';
@@ -44,9 +45,12 @@ const Home = () => {
         </Carousel.Item>
       </Carousel>
       <div className={styles.cardContainer}>
-        {eventos.map(event => (
+        {eventos.slice(0, 6).map(event => (
           <CardEvento key={event.id} event={event} />
         ))}
+      </div>
+      <div className={styles.verMaisContainer}>
+        <Link to="/EventList" className="btn btn-primary">Ver mais</Link>
       </div>
     </div>
   );

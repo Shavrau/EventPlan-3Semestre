@@ -1,0 +1,23 @@
+.container {
+    padding: 1rem;
+  }
+
+  .dropdown {
+    padding: 2rem;
+    padding-top: 4rem;
+  }
+  
+  .cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .paginationContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
