@@ -7,6 +7,7 @@ import Logo from "../assets/Logo.svg";
 import { NavLink } from "react-router-dom";
 import LanguageSelector from "./Traducao/LanguageSelector";
 import { useAuth } from "../context/AuthContext";
+import DarkModeToggle from "./DarkMode/DarkMode";
 
 
 const Navbar = () => {
@@ -39,8 +40,9 @@ const Navbar = () => {
                 className="iconLeft"
               />
             </div>
+            <DarkModeToggle />
             <BootstrapNavbar.Collapse id="basic-navbar-nav"></BootstrapNavbar.Collapse>
-            <NavLink to="#darkmode" className="text-light">
+            <NavLink to={DarkModeToggle} className="text-light">
               <FontAwesomeIcon
                 icon={faCircleHalfStroke}
                 style={{ fontSize: iconSize, marginRight: "20px" }}
