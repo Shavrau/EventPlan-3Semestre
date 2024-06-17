@@ -1,33 +1,64 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { db } from '../../firebase/config';
-import { doc, getDoc } from 'firebase/firestore';
-import styles from './Event.module.css';
+import { doc, getDoc, collection, getDocs } from 'firebase/firestore';
 import { Container, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Chat from '../../components/Chat/Chat';
 import EventRating from '../../components/Avaliacao/Avaliacao';
 import FavoriteEvents from '../../components/Favoritos/Favoritos';
 import UploadImage from '../../components/UploadImage/UploadImage';
+import ExportToCSV from '../../components/ExportToCsv/ExportToCsv';
+import { db } from '../../firebase/config';
+import styles from './Event.module.css';
 
 const Event = () => {
   const { id } = useParams();
   const [eventData, setEventData] = useState(null);
-  const userId = "user-id"; 
+  const [ratings, setRatings] = useState([]);
+  const [averageRating, setAverageRating] = useState(0); // Inicializa com 0
 
   useEffect(() => {
-    const fetchEvent = async () => {
-      const docRef = doc(db, 'Eventos', id);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        setEventData(docSnap.data());
-      } else {
-        console.log('No such document!');
+    const fetchEventAndRatings = async () => {
+      try {
+        // Fetch event data
+        const eventRef = doc(db, 'Eventos', id);
+        const eventSnap = await getDoc(eventRef);
+        if (eventSnap.exists()) {
+          setEventData(eventSnap.data());
+        } else {
+          console.log('No such document!');
+        }
+
+        // Fetch ratings
+        const ratingsCollection = collection(db, `Eventos/${id}/ratings`);
+        const ratingsSnapshot = await getDocs(ratingsCollection);
+        const fetchedRatings = ratingsSnapshot.docs.map(doc => doc.data());
+        setRatings(fetchedRatings);
+
+        // Calculate average rating
+        const avgRating = calculateAverageRating(fetchedRatings);
+        setAverageRating(avgRating);
+      } catch (error) {
+        console.error('Error fetching event and ratings:', error);
       }
     };
 
-    fetchEvent();
+    fetchEventAndRatings();
   }, [id]);
+
+  const calculateAverageRating = (ratings) => {
+    if (ratings.length === 0) {
+      return 0;
+    }
+
+    const totalRating = ratings.reduce((acc, rating) => {
+      // Verifica se rating.rating é um número válido antes de somar
+      const validRating = typeof rating.rating === 'number' && !isNaN(rating.rating) ? rating.rating : 0;
+      return acc + validRating;
+    }, 0);
+
+    return totalRating / ratings.length;
+  };
 
   if (!eventData) return <div>Loading...</div>;
 
@@ -84,13 +115,18 @@ const Event = () => {
             placement="top"
             overlay={<Tooltip id="tooltip-favorite">Adicionar aos Favoritos</Tooltip>}
           >
-            <FavoriteEvents userId={userId} eventId={id} eventName={eventData.nome} />
+            <FavoriteEvents userId="user-id" eventId={id} eventName={eventData.nome} />
           </OverlayTrigger>
         </Col>
       </Row>
       <Row>
         <Col>
           <UploadImage />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <ExportToCSV eventData={eventData} averageRating={averageRating} />
         </Col>
       </Row>
     </Container>
