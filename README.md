@@ -1568,3 +1568,415 @@ Repositório para desenvolvimento do software EventPlan, para o cumprimento do P
 
         export default Header;
         ```
+
+42. **[3 pontos] Adicionar modo escuro**
+    - **Descrição**: Implemente um modo escuro para a interface do usuário, permitindo que os usuários alternem entre os modos claro e escuro para uma melhor experiência de visualização.
+    - **Exemplo de Código**:
+      ```jsx
+      import React, { useState } from 'react';
+      import { Button } from 'react-bootstrap';
+
+      const DarkModeToggle = () => {
+        const [darkMode, setDarkMode] = useState(false);
+
+        const toggleDarkMode = () => {
+          setDarkMode(!darkMode);
+        };
+
+        return (
+          <div className={darkMode ? 'dark-mode' : 'light-mode'}>
+            <Button onClick={toggleDarkMode}>
+              {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+            </Button>
+          </div>
+        );
+      };
+
+      export default DarkModeToggle;
+      ```
+
+43. **[5 pontos] Melhorar validação de formulários**
+    - **Descrição**: Adicione validação avançada aos formulários para garantir que os dados sejam inseridos corretamente antes do envio.
+    - **Exemplo de Código**:
+      ```jsx
+      import React, { useState } from 'react';
+      import { Form, Button, Alert } from 'react-bootstrap';
+
+      const EventForm = () => {
+        const [formData, setFormData] = useState({ name: '', date: '' });
+        const [errors, setErrors] = useState({});
+
+        const validate = () => {
+          const errors = {};
+          if (!formData.name) errors.name = 'Event name is required';
+          if (!formData.date) errors.date = 'Event date is required';
+          return errors;
+        };
+
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          const errors = validate();
+          if (Object.keys(errors).length === 0) {
+            console.log('Form submitted', formData);
+          } else {
+            setErrors(errors);
+          }
+        };
+
+        return (
+          <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="eventName">
+              <Form.Label>Event Name</Form.Label>
+              <Form.Control
+                type="text"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                isInvalid={!!errors.name}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.name}
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId="eventDate">
+              <Form.Label>Event Date</Form.Label>
+              <Form.Control
+                type="date"
+                value={formData.date}
+                onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+                isInvalid={!!errors.date}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.date}
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+        );
+      };
+
+      export default EventForm;
+      ```
+
+44. **[8 pontos] Adicionar breadcrumbs para navegação**
+    - **Descrição**: Adicione breadcrumbs para facilitar a navegação dos usuários e indicar a localização atual na estrutura do site.
+    - **Exemplo de Código**:
+      ```jsx
+      import React from 'react';
+      import { Breadcrumb } from 'react-bootstrap';
+
+      const Breadcrumbs = () => {
+        return (
+          <Breadcrumb>
+            <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+            <Breadcrumb.Item href="/events">Events</Breadcrumb.Item>
+            <Breadcrumb.Item active>Event Details</Breadcrumb.Item>
+          </Breadcrumb>
+        );
+      };
+
+      export default Breadcrumbs;
+      ```
+
+45. **[13 pontos] Implementar paginação de eventos**
+    - **Descrição**: Adicione funcionalidade de paginação à lista de eventos para melhorar a experiência do usuário e o desempenho do aplicativo.
+    - **Exemplo de Código**:
+      ```jsx
+      import React, { useState, useEffect } from 'react';
+      import { Pagination } from 'react-bootstrap';
+      import { db } from './firebaseConfig';
+
+      const EventList = () => {
+        const [events, setEvents] = useState([]);
+        const [currentPage, setCurrentPage] = useState(1);
+        const [eventsPerPage] = useState(5);
+
+        useEffect(() => {
+          const fetchEvents = async () => {
+            const data = await db.collection('events').get();
+            setEvents(data.docs.map(doc => doc.data()));
+          };
+          fetchEvents();
+        }, []);
+
+        const indexOfLastEvent = currentPage * eventsPerPage;
+        const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
+        const currentEvents = events.slice(indexOfFirstEvent, indexOfLastEvent);
+
+        const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+        return (
+          <div>
+            <ul>
+              {currentEvents.map((event, index) => (
+                <li key={index}>{event.name}</li>
+              ))}
+            </ul>
+            <Pagination>
+              {Array.from({ length: Math.ceil(events.length / eventsPerPage) }, (_, i) => (
+                <Pagination.Item key={i} onClick={() => paginate(i + 1)}>
+                  {i + 1}
+                </Pagination.Item>
+              ))}
+            </Pagination>
+          </div>
+        );
+      };
+
+      export default EventList;
+      ```
+
+46. **[21 pontos] Implementar sistema de reservas para eventos**
+    - **Descrição**: Adicione uma funcionalidade de reserva para permitir que os usuários reservem seus lugares nos eventos.
+    - **Exemplo de Código**:
+      ```jsx
+      import React, { useState } from 'react';
+      import { Button, Form } from 'react-bootstrap';
+      import { db } from './firebaseConfig';
+
+      const EventReservation = ({ eventId }) => {
+        const [name, setName] = useState('');
+        const [email, setEmail] = useState('');
+
+        const handleReservation = async (e) => {
+          e.preventDefault();
+          await db.collection('events').doc(eventId).collection('reservations').add({
+            name,
+            email,
+            timestamp: new Date()
+          });
+          setName('');
+          setEmail('');
+        };
+
+        return (
+          <Form onSubmit={handleReservation}>
+            <Form.Group controlId="name">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Enter your name"
+              />
+            </Form.Group>
+            <Form.Group controlId="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Reserve
+            </Button>
+          </Form>
+        );
+      };
+
+      export default EventReservation;
+      ```
+
+47. **[34 pontos] Adicionar relatórios de participação em eventos**
+    - **Descrição**: Crie relatórios detalhados de participação em eventos, mostrando o número de participantes, reservas, etc.
+    - **Exemplo de Código**:
+      ```jsx
+      import React, { useState, useEffect } from 'react';
+      import { db } from './firebaseConfig';
+      import { Table } from 'react-bootstrap';
+
+      const ParticipationReport = ({ eventId }) => {
+        const [reservations, setReservations] = useState([]);
+
+        useEffect(() => {
+          const fetchReservations = async () => {
+            const data = await db.collection('events').doc(eventId).collection('reservations').get();
+            setReservations(data.docs.map(doc => doc.data()));
+          };
+          fetchReservations();
+        }, [eventId]);
+
+        return (
+          <div>
+            <h3>Participation Report</h3>
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Reservation Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                {reservations.map((reservation, index) => (
+                  <tr key={index}>
+                    <td>{reservation.name}</td>
+                    <td>{reservation.email}</td>
+                    <td>{new Date(reservation.timestamp.seconds * 1000).toLocaleString()}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </div>
+        );
+      };
+
+      export default ParticipationReport;
+      ```
+
+48. **[55 pontos] Implementar sistema de avaliação pós-evento**
+    - **Descrição**: Adicione um sistema para os participantes avaliarem os eventos após a sua conclusão.
+    - **Exemplo de Código**:
+      ```jsx
+      import React, { useState } from 'react';
+      import { Form, Button } from 'react-bootstrap';
+      import { db } from './firebaseConfig';
+
+      const PostEventEvaluation = ({ eventId }) => {
+        const [rating, setRating] = useState(0);
+        const [comments, setComments] = useState('');
+
+        const handleSubmit = async (e) => {
+          e.preventDefault();
+          await db.collection('events').doc(eventId).collection('evaluations').add({
+            rating,
+            comments,
+            timestamp: new Date()
+          });
+         
+
+ setRating(0);
+          setComments('');
+        };
+
+        return (
+          <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="rating">
+              <Form.Label>Rating</Form.Label>
+              <Form.Control
+                type="number"
+                value={rating}
+                onChange={(e) => setRating(e.target.value)}
+                min="1"
+                max="5"
+              />
+            </Form.Group>
+            <Form.Group controlId="comments">
+              <Form.Label>Comments</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                value={comments}
+                onChange={(e) => setComments(e.target.value)}
+                placeholder="Leave your comments"
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+        );
+      };
+
+      export default PostEventEvaluation;
+      ```
+
+49. **[21 pontos] Adicionar funcionalidade de favoritos para eventos**
+    - **Descrição**: Permitir que os usuários marquem eventos como favoritos para fácil acesso.
+    - **Exemplo de Código**:
+      ```jsx
+      import React, { useState, useEffect } from 'react';
+      import { db } from './firebaseConfig';
+
+      const FavoriteEvents = ({ userId }) => {
+        const [favorites, setFavorites] = useState([]);
+
+        useEffect(() => {
+          const fetchFavorites = async () => {
+            const data = await db.collection('users').doc(userId).collection('favorites').get();
+            setFavorites(data.docs.map(doc => doc.data()));
+          };
+
+          fetchFavorites();
+        }, [userId]);
+
+        const handleFavorite = (eventId) => {
+          db.collection('users').doc(userId).collection('favorites').doc(eventId).set({ eventId });
+        };
+
+        return (
+          <div>
+            <h3>Favorites</h3>
+            <ul>
+              {favorites.map((favorite, index) => (
+                <li key={index}>{favorite.eventId}</li>
+              ))}
+            </ul>
+            <button onClick={() => handleFavorite('new-event-id')}>Add to Favorites</button>
+          </div>
+        );
+      };
+
+      export default FavoriteEvents;
+      ```
+
+50. **[34 pontos] Implementar sistema de notificações push com Firebase Cloud Messaging**
+    - **Descrição**: Adicione um sistema de notificações push para alertar os usuários sobre novos eventos e atualizações importantes.
+    - **Exemplo de Código**:
+      ```js
+      // Firebase Cloud Messaging setup
+      import firebase from 'firebase/app';
+      import 'firebase/messaging';
+
+      const messaging = firebase.messaging();
+
+      messaging.requestPermission()
+        .then(() => {
+          console.log('Notification permission granted.');
+          return messaging.getToken();
+        })
+        .then(token => {
+          console.log('FCM Token:', token);
+          // Send the token to your server and update the UI if necessary
+        })
+        .catch(error => {
+          console.error('Unable to get permission to notify.', error);
+        });
+      ```
+
+51. **[13 pontos] Adicionar suporte a múltiplos idiomas**
+    - **Descrição**: Adicione suporte para múltiplos idiomas no aplicativo para atender a uma base de usuários global.
+    - **Exemplo de Código**:
+      ```jsx
+      import React, { useState } from 'react';
+      import { IntlProvider, FormattedMessage } from 'react-intl';
+      import messages from './messages';
+
+      const LanguageSelector = () => {
+        const [locale, setLocale] = useState('en');
+
+        const handleChangeLanguage = (e) => {
+          setLocale(e.target.value);
+        };
+
+        return (
+          <IntlProvider locale={locale} messages={messages[locale]}>
+            <div>
+              <select onChange={handleChangeLanguage}>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+              </select>
+              <p>
+                <FormattedMessage id="greeting" defaultMessage="Hello, World!" />
+              </p>
+            </div>
+          </IntlProvider>
+        );
+      };
+
+      export default LanguageSelector;
+      ```
