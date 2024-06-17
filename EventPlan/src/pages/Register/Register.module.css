@@ -120,13 +120,13 @@ h1 {
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
     box-sizing: border-box;
     transition: transform 0.2s ease; 
-}
-
-.content6:hover {
+  }
+  
+  .content6:hover {
     transform: scale(1.1); 
-}
-
-.iconevoltar {
+  }
+  
+  .iconevoltar {
     font-size: 21px;
     width: 30px;
     height: 30px;
@@ -134,9 +134,9 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 1px;
+    margin-right: 5px;
     transform: scaleX(-1);
-}
+  }
 
 .terms {
     text-align: center;
@@ -171,370 +171,313 @@ h1 {
         margin-left: -10px;
     }
 
-    .register {
-        margin-top: -30px;
-    }
-
-    .passwordVisibilityToggle {
-        left: 300px;
-        font-size: 25px;
-    }
-
-    .label {
-        font-size: 20px; 
-    }
-
-    .input {
-        width: 280px;
-    }
-
-    .btn {
-        font-size: 19px; 
-        width: 200px; 
-        height: 40px;
-        left: 52px;
-    }
-
-    .content6 {
-        width: 100px;
-        height: 30px;
-        top: 94px;
-        left: 10px;
-        font-size: 15px;
-    }
-
-    .iconevoltar {
-        font-size: 20px;
-        width: 20px;
-        height: 20px;
-        margin-top: 0;
-        margin-right: 4px;
-        transform: scaleX(-1);      
-    }
-
-    .terms {
-        margin-left: -148px;
-    }
-}
-
-@media only screen and (max-width: 920px) {
     .container {
-        height: 700px;
-        margin-left: -25px;
-    }
-
-    .register {
-        margin-top: -30px;
-    }
-
-    .label {
-        font-size: 20px; 
-    }
-
-    .input {
-        width: 280px;
-    }
-
-    .btn {
-        font-size: 19px; 
-        width: 200px; 
-        height: 40px;
-        left: 52px;
-    }
-
-    .content6 {
-        width: 100px;
-        height: 30px;
-        top: 94px;
-        left: 15px;
-        font-size: 15px;
-    }
-
-    .iconevoltar {
-        font-size: 20px;
-        width: 20px;
-        height: 20px;
-        margin-top: 0;
-        margin-right: 4px;
-        transform: scaleX(-1);      
-    }
-
-    .terms {
-        margin-left: -148px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .container {
-        height: 700px;
-        margin-left: -25px;
-    }
-
-    .passwordVisibilityToggle {
-        font-size: 25px;
-    }
-
-    .register {
-        padding-top: 50px;
-    }
-
-    .label {
-        font-size: 20px; 
-    }
-
-    .input {
-        width: 280px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 778px;
+        margin-left: 0px;
+        padding-top: 100px;
     }
     
-
-    .btn {
-        font-size: 19.5px; 
-        width: 200px; 
-        height: 40px;
-        left: 52px;
-    }
-
-    .content6 {
-        width: 100px;
-        height: 30px;
-        top: 94px;
-        left: 15px;
-        font-size: 15px;
-    }
-
-    .iconevoltar {
-        font-size: 20px;
-        width: 20px;
-        height: 20px;
-        margin-top: -2px;
-        margin-right: 4px;
-        transform: scaleX(-1);   
-    }
-
-    .terms {
-        font-size: 11px;
-        margin-left: -118px;
-    }
-}
-
-@media only screen and (max-width: 650px) {
-    .container {
-        height: 660px;
-    }
-
-    .passwordVisibilityToggle {
-        left: 300px;
-    }
-
-    .label {
-        font-size: 18px; 
-    }
-
-    .input {
-        width: 280px;
+    .register {
+        max-width: 600px;
+        padding-top: 60px;
+        font-family: Arial, sans-serif;
     }
     
-
-    .btn {
-        font-size: 13.5px; 
-        width: 140px; 
-        height: 35px;
-        left: 78px;
+    h1 {
+        text-align: center;
+        white-space: nowrap; 
     }
-
-    .content6 {
-        width: 35px;
-        height: 35px;
-        top: 94px;
-        left: 15px;
-        font-size: 0; 
+    
+    .field {
+        margin-bottom: 2em;
+        position: relative;
     }
-
-    .content6 .iconevoltar {
-        font-size: 20px;
-        width: 20px;
-        height: 20px;
-        margin-top: 0;
-        margin-right: 0px;
-        transform: scaleX(-1);
+    
+    .passwordInputContainer {
+        position: relative;
     }
-
-    .terms {
-        font-size: 9px;
-        margin-left: -60px;
-    }
-}
-
-@media only screen and (max-width: 470px) {
-    .container {
-        height: 660px;
-    }
-
+      
     .passwordVisibilityToggle {
-        left: 260px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -80px; 
+        background: none;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        padding: 0;
+        margin: 0;
+        color: #000000;
     }
-
+    
     .label {
-        font-size: 18px; 
+        font-size: 24px;
+        font-weight: bold;
+        display: block;
+        margin-top: 0.5em;
     }
-
+    
+    .label::before {
+        content: "• ";
+        font-weight: bold;
+        margin-right: 0.25em;
+    }
+    
     .input {
+        border: none;
+        border-bottom: 2px solid #000;
+        width: 300px;
+        padding: 0.1em 0 0 0;
+        font-size: 24px;
+        font-weight: bold;
+        background: none;
+        color: #000;
+        margin-left: 20px;
+    }
+    
+    .input:focus {
+        outline: none;
+        border-bottom: 2px solid #000;
+    }
+    
+    .btn {
         width: 240px;
+        height: 60px;
+        background-color: white;
+        position: relative;
+        margin-top: 2em;
+        font-family: 'Inter', sans-serif;
+        font-size: 23.5px;
+        font-weight: 600;
+        color: black;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #000;
+        border-radius: 10px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+        box-sizing: border-box;
+        left: 42px;
+        transition: transform 0.2s ease; 
     }
     
-
-    .btn {
-        font-size: 13.5px; 
-        width: 140px; 
-        height: 35px;
-        left: 58px;
-    }
-
-    .content6 {
-        width: 35px;
-        height: 35px;
-        top: 70px;
-        left: 15px;
-        font-size: 0; 
-    }
-
-    .content6 .iconevoltar {
-        font-size: 20px;
-        width: 20px;
-        height: 20px;
-        margin-top: 0;
-        margin-right: 0px;
-        transform: scaleX(-1);
-    }
-
-    .terms {
-        font-size: 8px;
-        margin-left: -65px;
-    }
-}
-
-@media only screen and (max-width: 390px) {
-    .container { 
-        height: 630px;
-        margin-left: -50px;
-    }
-
-    .passwordVisibilityToggle {
-        left: 260px;
-    }
-
-    .label {
-        font-size: 16px; 
-    }
-
-    .input {
-        width: 240px;
+    .btn:hover {
+        transform: scale(1.1); 
+    
     }
     
-
-    .btn {
-        font-size: 11.5px; 
-        width: 120px; 
-        height: 35px;
-        left: 70px;
-    }
-
     .content6 {
-        width: 35px;
-        height: 35px;
-        top: 70px;
+        width: 140px;
+        height: 40px;
+        background-color: white;
+        position: fixed;
+        top: 94px;
         left: 15px;
-        font-size: 0; 
-    }
-
-    .content6 .iconevoltar {
-        font-size: 20px;
-        width: 20px;
-        height: 20px;
-        margin-top: 0;
-        margin-right: 0px;
-        transform: scaleX(-1);
-    }
-
-    .terms {
-        font-size: 7px;
-        margin-left: -37px;
-    }
-}
-
-@media only screen and (max-width: 340px) {
-    .container { 
-        height: 560px;
-        margin-left: -60px;
-    }
-
-    .passwordVisibilityToggle {
-        left: 200px;
-        font-size: 20px;
-    }
-
-    .label {
-        font-size: 12px; 
-    }
-
-    .input {
-        width: 180px;
+        font-family: 'Inter', sans-serif;
+        font-size: 21px;
+        font-weight: 600;
+        color: black;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #000;
+        border-radius: 10px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+        box-sizing: border-box;
+        transition: transform 0.2s ease; 
     }
     
-    .btn {
-        font-size: 5.5px; 
-        width: 70px; 
-        height: 25px;
-        left: 70px;
+    .content6:hover {
+        transform: scale(1.1); 
     }
-
-    .content6 {
-        width: 35px;
-        height: 35px;
-        top: 70px;
-        left: 15px;
-        font-size: 0; 
-    }
-
-    .content6 .iconevoltar {
-        font-size: 20px;
-        width: 20px;
-        height: 20px;
-        margin-top: 0;
-        margin-right: 0px;
+    
+    .iconevoltar {
+        font-size: 21px;
+        width: 30px;
+        height: 30px;
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1px;
         transform: scaleX(-1);
     }
-
+    
     .terms {
-        display:none;
+        text-align: center;
+        margin-top: 30px;
+        margin-left: -159px;
+        font-size: 13px;
+        font-weight: bold;
+        white-space: nowrap;
+        position: relative;
     }
-}
-
-@media only screen and (max-width: 240px) {
-    .container { 
-        height: 540px;
-        margin-left: -40px;
+    
+    .terms span {
+        color: #306AFF;
+        position: relative;
     }
-
-    .passwordVisibilityToggle {
-        left: 62px;
-        font-size: 20px;
+    
+    .terms span::after {
+        content: '';
+        display: block;
+        width: calc(100% - 0px); 
+        height: 1px;
+        background-color: #306AFF;
+        position: absolute;
+        bottom: -2px; 
+        left: 50%;
+        transform: translateX(-50%);
     }
+    
+    @media only screen and (max-width: 1300px) {
+        .container {
+            height: 785px;
+            margin-left: -10px;
+        }
+    }
+    
+    @media only screen and (max-width: 920px) {
+        .container {
+            height: 779px;
+            margin-left: -25px;
+        }
+    }
+    
+    @media only screen and (max-width: 768px) {
+        .container {
+            height: 700px;
+            margin-left: -25px;
+        }
+    
+        .passwordVisibilityToggle {
+            left: 300px;
+            font-size: 25px;
+        }
+    
+        .register {
+            padding-top: 50px;
+        }
     
         .label {
-            font-size: 7px; 
+            font-size: 20px; 
         }
     
         .input {
-            width: 80px;
+            width: 280px;
         }
         
     
         .btn {
-            font-size: 5.5px; 
-            width: 60px; 
-            height: 25px;
-            left: 25px;
+            font-size: 19.5px; 
+            width: 200px; 
+            height: 40px;
+            left: 52px;
+        }
+    
+        .content6 {
+            width: 100px;
+            height: 30px;
+            top: 94px;
+            left: 15px;
+            font-size: 15px;
+          }
+          
+          
+          .iconevoltar {
+            font-size: 20px;
+            width: 20px;
+            height: 20px;
+            margin-top: 0;
+            margin-right: 3px;
+            transform: scaleX(-1);
+          }
+    
+        .terms {
+            font-size: 11px;
+            margin-left: -118px;
+        }
+    }
+    
+    @media only screen and (max-width: 650px) {
+        .container {
+            height: 660px;
+        }
+    
+        .passwordVisibilityToggle {
+            left: 300px;
+        }
+    
+        .label {
+            font-size: 18px; 
+        }
+    
+        .input {
+            width: 280px;
+        }
+        
+    
+        .btn {
+            font-size: 13.5px; 
+            width: 140px; 
+            height: 35px;
+            left: 78px;
+        }
+    
+        .content6 {
+            width: 35px;
+            height: 35px;
+            top: 94px;
+            left: 15px;
+            font-size: 0; 
+        }
+    
+        .content6 .iconevoltar {
+            font-size: 20px;
+            width: 20px;
+            height: 20px;
+            margin-top: 0;
+            margin-right: 0px;
+            transform: scaleX(-1);
+        }
+    
+        .terms {
+            font-size: 9px;
+            margin-left: -60px;
+        }
+    }
+    
+    @media only screen and (max-width: 470px) {
+        .container {
+            height: 660px;
+        }
+    
+        .passwordVisibilityToggle {
+            left: 258px;
+        }
+    
+        .label {
+            font-size: 18px; 
+        }
+    
+        .input {
+            width: 240px;
+        }
+        
+    
+        .btn {
+            font-size: 13.5px; 
+            width: 140px; 
+            height: 35px;
+            left: 58px;
         }
     
         .content6 {
@@ -555,54 +498,204 @@ h1 {
         }
     
         .terms {
-            display:none;
+            font-size: 8px;
+            margin-left: -65px;
         }
-}
-
-@media only screen and (max-width: 100px) {
-    .container { 
-        height: 500px;
-        margin-left: -40px;
-    }
-
-    .passwordVisibilityToggle {
-        left: -22px;
-    }
-
-    .label {
-        font-size: 5px; 
-    }
-
-    .input {
-        width: 30px;
     }
     
-
-    .btn {
-        font-size: 2.5px; 
-        width: 35px; 
-        height: 15px;
-        left: 5px;
+    @media only screen and (max-width: 390px) {
+        .container { 
+            height: 630px;
+            margin-left: -50px;
+        }
+    
+        .passwordVisibilityToggle {
+            left: 260px;
+        }
+    
+        .label {
+            font-size: 16px; 
+        }
+    
+        .input {
+            width: 240px;
+        }
+        
+    
+        .btn {
+            font-size: 11.5px; 
+            width: 120px; 
+            height: 35px;
+            left: 70px;
+        }
+    
+        .content6 {
+            width: 35px;
+            height: 35px;
+            top: 70px;
+            left: 15px;
+            font-size: 0; 
+        }
+    
+        .content6 .iconevoltar {
+            font-size: 20px;
+            width: 20px;
+            height: 20px;
+            margin-top: 0;
+            margin-right: 0px;
+            transform: scaleX(-1);
+        }
+    
+        .terms {
+            font-size: 7px;
+            margin-left: -37px;
+        }
     }
-
-    .content6 {
-        width: 35px;
-        height: 35px;
-        top: 70px;
-        left: 15px;
-        font-size: 0; 
+    
+    @media only screen and (max-width: 340px) {
+        .container { 
+            height: 560px;
+            margin-left: -60px;
+        }
+    
+        .passwordVisibilityToggle {
+            left: 190px;
+            font-size: 20px;
+        }
+    
+        .label {
+            font-size: 12px; 
+        }
+    
+        .input {
+            width: 180px;
+        }
+        
+        .btn {
+            font-size: 5.5px; 
+            width: 70px; 
+            height: 25px;
+            left: 70px;
+        }
+    
+        .content6 {
+            width: 35px;
+            height: 35px;
+            top: 70px;
+            left: 15px;
+            font-size: 0; 
+        }
+        
+        .content6 .iconevoltar {
+            font-size: 20px;
+            width: 20px;
+            height: 20px;
+            margin-top: 0;
+            margin-right: 0px;
+            transform: scaleX(-1);
+        }
+    
+        .terms {
+            display:none;
+        }
     }
-
-    .content6 .iconevoltar {
-        font-size: 20px;
-        width: 20px;
-        height: 20px;
-        margin-top: 0;
-        margin-right: 0px;
-        transform: scaleX(-1);
+    
+    @media only screen and (max-width: 240px) {
+        .container { 
+            height: 540px;
+            margin-left: -40px;
+        }
+    
+        .passwordVisibilityToggle {
+            left: 62px;
+            font-size: 20px;
+        }
+        
+            .label {
+                font-size: 7px; 
+            }
+        
+            .input {
+                width: 80px;
+            }
+            
+        
+            .btn {
+                font-size: 5.5px; 
+                width: 60px; 
+                height: 25px;
+                left: 25px;
+            }
+        
+            .content6 {
+                width: 35px;
+                height: 35px;
+                top: 70px;
+                left: 15px;
+                font-size: 0; 
+            }
+            
+            .content6 .iconevoltar {
+                font-size: 20px;
+                width: 20px;
+                height: 20px;
+                margin-top: 0;
+                margin-right: 0px;
+                transform: scaleX(-1);
+            }
+        
+            .terms {
+                display:none;
+            }
     }
-
-    .terms {
-        display:none;
-    }
+    
+    @media only screen and (max-width: 150px) {
+        .container { 
+            height: 500px;
+            margin-left: -5px;
+        }
+    
+        .passwordVisibilityToggle {
+            display: none;
+        }
+    
+        .label {
+            font-size: 5px; 
+        }
+    
+        .input {
+            width: 10px;
+        }
+        
+    
+        .btn {
+            font-size: 2.5px; 
+            width: 35px; 
+            height: 15px;
+            left: 0px;
+        }
+    
+        .content6 {
+            width: 20px;
+            height: 20px;
+            top: 70px;
+            left: 15px;
+            font-size: 0; 
+          }
+          
+          
+          .content6 .iconevoltar {
+            font-size: 10px;
+            width: 10px;
+            height: 10px;
+            margin-top: 0;
+            margin-right: 0px;
+            transform: scaleX(-1);
+          }
+    
+        .terms {
+            display:none;
+        }
+    }   
 }
+
