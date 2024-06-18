@@ -2,3 +2,13 @@
   min-height: 60vh;
   margin-bottom: 5em;
 }
+
+.light-mode {
+  background-color: #FFF;
+  color: #333;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #FFF;
+}

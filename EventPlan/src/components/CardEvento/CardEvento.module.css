@@ -62,3 +62,9 @@
     flex: 1 1 calc(50% - 2rem);
   }
 }
+
+@media(max-width: 1440px){
+  .card{
+    max-width: 600px;
+  }
+}

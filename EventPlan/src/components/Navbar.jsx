@@ -42,12 +42,6 @@ const Navbar = () => {
             </div>
             <DarkModeToggle />
             <BootstrapNavbar.Collapse id="basic-navbar-nav"></BootstrapNavbar.Collapse>
-            <NavLink to={DarkModeToggle} className="text-light">
-              <FontAwesomeIcon
-                icon={faCircleHalfStroke}
-                style={{ fontSize: iconSize, marginRight: "20px" }}
-              />
-            </NavLink>
           </div>
           <div className={styles.centerItem}>
             <NavLink to="/">
@@ -58,10 +52,6 @@ const Navbar = () => {
           </div>
           <div className={`ml-auto d-flex align-items-center ${styles.rightItems}`}>
             <LanguageSelector />
-            <FontAwesomeIcon
-              icon={faSearch}
-              style={{ fontSize: iconSize, marginRight: "20px" }}
-            />
             {user ? (
               <NavLink to="/profile" className="d-none d-lg-block">
                 <FontAwesomeIcon
