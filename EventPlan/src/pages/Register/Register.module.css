@@ -2,36 +2,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 790px;
+    height: 795px;
     margin-left: 0px;
     padding-top: 100px;
-}
-
-.register {
+    }
+    
+    .register {
     max-width: 600px;
     padding-top: 60px;
     font-family: Arial, sans-serif;
-}
-
-h1 {
+    }
+    
+    h1 {
     text-align: center;
-    white-space: nowrap; 
-}
-
-.field {
+    white-space: nowrap;
+    }
+    
+    .field {
     margin-bottom: 2em;
     position: relative;
-}
-
-.passwordInputContainer {
+    }
+    
+    .passwordInputContainer {
     position: relative;
-}
-  
-.passwordVisibilityToggle {
+    }
+    
+    .passwordVisibilityToggle {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: -80px; 
+    right: -80px;
     background: none;
     border: none;
     cursor: pointer;
@@ -39,22 +39,22 @@ h1 {
     padding: 0;
     margin: 0;
     color: #000000;
-}
-
-.label {
+    }
+    
+    .label {
     font-size: 24px;
     font-weight: bold;
     display: block;
     margin-top: 0.5em;
-}
-
-.label::before {
+    }
+    
+    .label::before {
     content: "• ";
     font-weight: bold;
     margin-right: 0.25em;
-}
-
-.input {
+    }
+    
+    .input {
     border: none;
     border-bottom: 2px solid #000;
     width: 300px;
@@ -64,14 +64,15 @@ h1 {
     background: none;
     color: #000;
     margin-left: 20px;
-}
-
-.input:focus {
+    }
+    
+    .input
+    {
     outline: none;
     border-bottom: 2px solid #000;
-}
-
-.btn {
+    }
+    
+    .btn {
     width: 240px;
     height: 60px;
     background-color: white;
@@ -91,15 +92,14 @@ h1 {
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
     box-sizing: border-box;
     left: 42px;
-    transition: transform 0.2s ease; 
+    transition: transform 0.2s ease;
 }
 
 .btn:hover {
-    transform: scale(1.1); 
-
+    transform: scale(1.1);
 }
-
-.content6 {
+    
+    .content6 {
     width: 140px;
     height: 40px;
     background-color: white;
@@ -125,8 +125,8 @@ h1 {
   .content6:hover {
     transform: scale(1.1); 
   }
-  
-  .iconevoltar {
+    
+    .iconevoltar {
     font-size: 21px;
     width: 30px;
     height: 30px;
@@ -136,9 +136,9 @@ h1 {
     justify-content: center;
     margin-right: 5px;
     transform: scaleX(-1);
-  }
-
-.terms {
+    }
+    
+    .terms {
     text-align: center;
     margin-top: 30px;
     margin-left: -159px;
@@ -146,221 +146,34 @@ h1 {
     font-weight: bold;
     white-space: nowrap;
     position: relative;
-}
-
-.terms span {
-    color: #306AFF;
-    position: relative;
-}
-
-.terms span::after {
-    content: '';
-    display: block;
-    width: calc(100% - 0px); 
-    height: 1px;
-    background-color: #306AFF;
-    position: absolute;
-    bottom: -2px; 
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-@media only screen and (max-width: 1300px) {
-    .container {
-        height: 720px;
-        margin-left: -10px;
-    }
-
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 778px;
-        margin-left: 0px;
-        padding-top: 100px;
-    }
-    
-    .register {
-        max-width: 600px;
-        padding-top: 60px;
-        font-family: Arial, sans-serif;
-    }
-    
-    h1 {
-        text-align: center;
-        white-space: nowrap; 
-    }
-    
-    .field {
-        margin-bottom: 2em;
-        position: relative;
-    }
-    
-    .passwordInputContainer {
-        position: relative;
-    }
-      
-    .passwordVisibilityToggle {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: -80px; 
-        background: none;
-        border: none;
-        cursor: pointer;
-        outline: none;
-        padding: 0;
-        margin: 0;
-        color: #000000;
-    }
-    
-    .label {
-        font-size: 24px;
-        font-weight: bold;
-        display: block;
-        margin-top: 0.5em;
-    }
-    
-    .label::before {
-        content: "• ";
-        font-weight: bold;
-        margin-right: 0.25em;
-    }
-    
-    .input {
-        border: none;
-        border-bottom: 2px solid #000;
-        width: 300px;
-        padding: 0.1em 0 0 0;
-        font-size: 24px;
-        font-weight: bold;
-        background: none;
-        color: #000;
-        margin-left: 20px;
-    }
-    
-    .input:focus {
-        outline: none;
-        border-bottom: 2px solid #000;
-    }
-    
-    .btn {
-        width: 240px;
-        height: 60px;
-        background-color: white;
-        position: relative;
-        margin-top: 2em;
-        font-family: 'Inter', sans-serif;
-        font-size: 23.5px;
-        font-weight: 600;
-        color: black;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 2px solid #000;
-        border-radius: 10px;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-        filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
-        box-sizing: border-box;
-        left: 42px;
-        transition: transform 0.2s ease; 
-    }
-    
-    .btn:hover {
-        transform: scale(1.1); 
-    
-    }
-    
-    .content6 {
-        width: 140px;
-        height: 40px;
-        background-color: white;
-        position: fixed;
-        top: 94px;
-        left: 15px;
-        font-family: 'Inter', sans-serif;
-        font-size: 21px;
-        font-weight: 600;
-        color: black;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 2px solid #000;
-        border-radius: 10px;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-        filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
-        box-sizing: border-box;
-        transition: transform 0.2s ease; 
-    }
-    
-    .content6:hover {
-        transform: scale(1.1); 
-    }
-    
-    .iconevoltar {
-        font-size: 21px;
-        width: 30px;
-        height: 30px;
-        color: #000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 1px;
-        transform: scaleX(-1);
-    }
-    
-    .terms {
-        text-align: center;
-        margin-top: 30px;
-        margin-left: -159px;
-        font-size: 13px;
-        font-weight: bold;
-        white-space: nowrap;
-        position: relative;
     }
     
     .terms span {
-        color: #306AFF;
-        position: relative;
+    color: #306AFF;
+    position: relative;
     }
     
     .terms span::after {
-        content: '';
-        display: block;
-        width: calc(100% - 0px); 
-        height: 1px;
-        background-color: #306AFF;
-        position: absolute;
-        bottom: -2px; 
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    @media only screen and (max-width: 1300px) {
-        .container {
-            height: 785px;
-            margin-left: -10px;
-        }
-    }
-    
-    @media only screen and (max-width: 920px) {
-        .container {
-            height: 779px;
-            margin-left: -25px;
-        }
+    content: '';
+    display: block;
+    width: calc(100% - 0px);
+    height: 1px;
+    background-color: #306AFF;
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
     }
     
     @media only screen and (max-width: 768px) {
         .container {
-            height: 700px;
+            height: 690px;
             margin-left: -25px;
         }
     
         .passwordVisibilityToggle {
             left: 300px;
-            font-size: 25px;
+            font-size: 20px;
         }
     
         .register {
@@ -369,6 +182,21 @@ h1 {
     
         .label {
             font-size: 20px; 
+        }
+    
+        .input[type='text'],
+        .input[type='email'],
+        .input[type='tel'],
+        .input[type='password'] {
+            font-size: 20px;
+    
+        }
+        
+        .input[type='text']:focus,
+        .input[type='email']:focus,
+        .input[type='tel']:focus,
+        .input[type='password']:focus {
+            font-size: 20px;
         }
     
         .input {
@@ -409,15 +237,31 @@ h1 {
     
     @media only screen and (max-width: 650px) {
         .container {
-            height: 660px;
+            height: 640px;
         }
     
         .passwordVisibilityToggle {
             left: 300px;
+            font-size: 18px;
         }
     
         .label {
             font-size: 18px; 
+        }
+    
+        .input[type='text'],
+        .input[type='email'],
+        .input[type='tel'],
+        .input[type='password'] {
+            font-size: 18px;
+    
+        }
+        
+        .input[type='text']:focus,
+        .input[type='email']:focus,
+        .input[type='tel']:focus,
+        .input[type='password']:focus {
+            font-size: 18px;
         }
     
         .input {
@@ -455,17 +299,33 @@ h1 {
         }
     }
     
-    @media only screen and (max-width: 470px) {
+    @media only screen and (max-width: 475px) {
         .container {
-            height: 660px;
+            height: 610px;
         }
     
         .passwordVisibilityToggle {
             left: 258px;
+            font-size: 16px; 
         }
     
         .label {
-            font-size: 18px; 
+            font-size: 16px; 
+        }
+    
+        .input[type='text'],
+        .input[type='email'],
+        .input[type='tel'],
+        .input[type='password'] {
+            font-size: 16px;
+    
+        }
+        
+        .input[type='text']:focus,
+        .input[type='email']:focus,
+        .input[type='tel']:focus,
+        .input[type='password']:focus {
+            font-size: 16px;
         }
     
         .input {
@@ -480,10 +340,11 @@ h1 {
             left: 58px;
         }
     
+        
         .content6 {
             width: 35px;
             height: 35px;
-            top: 70px;
+            top: 94px;
             left: 15px;
             font-size: 0; 
         }
@@ -503,9 +364,9 @@ h1 {
         }
     }
     
-    @media only screen and (max-width: 390px) {
+    @media only screen and (max-width: 445px) {
         .container { 
-            height: 630px;
+            height: 600px;
             margin-left: -50px;
         }
     
@@ -554,17 +415,32 @@ h1 {
     
     @media only screen and (max-width: 340px) {
         .container { 
-            height: 560px;
+            height: 490px;
             margin-left: -60px;
         }
     
         .passwordVisibilityToggle {
-            left: 190px;
-            font-size: 20px;
+            left: 180px;
+            font-size: 12px;
         }
     
         .label {
             font-size: 12px; 
+        }
+    
+        .input[type='text'],
+        .input[type='email'],
+        .input[type='tel'],
+        .input[type='password'] {
+            font-size: 12px;
+    
+        }
+        
+        .input[type='text']:focus,
+        .input[type='email']:focus,
+        .input[type='tel']:focus,
+        .input[type='password']:focus {
+            font-size: 12px;
         }
     
         .input {
@@ -602,18 +478,33 @@ h1 {
     
     @media only screen and (max-width: 240px) {
         .container { 
-            height: 540px;
+            height: 440px;
             margin-left: -40px;
         }
     
         .passwordVisibilityToggle {
-            left: 62px;
-            font-size: 20px;
+            left: 46px;
+            font-size: 7px;
         }
         
             .label {
                 font-size: 7px; 
             }
+    
+            .input[type='text'],
+            .input[type='email'],
+            .input[type='tel'],
+            .input[type='password'] {
+                font-size: 7px;
+    
+            }
+            
+            .input[type='text']:focus,
+            .input[type='email']:focus,
+            .input[type='tel']:focus,
+            .input[type='password']:focus {
+                font-size: 7px;
+            }  
         
             .input {
                 width: 80px;
@@ -651,16 +542,32 @@ h1 {
     
     @media only screen and (max-width: 150px) {
         .container { 
-            height: 500px;
+            height: 410px;
             margin-left: -5px;
         }
     
         .passwordVisibilityToggle {
-            display: none;
+            left: -52px;
+            font-size: 5px;        
         }
     
         .label {
             font-size: 5px; 
+        }
+    
+        .input[type='text'],
+        .input[type='email'],
+        .input[type='tel'],
+        .input[type='password'] {
+            font-size: 5px;
+    
+        }
+        
+        .input[type='text']:focus,
+        .input[type='email']:focus,
+        .input[type='tel']:focus,
+        .input[type='password']:focus {
+            font-size: 5px;
         }
     
         .input {
@@ -697,5 +604,6 @@ h1 {
             display:none;
         }
     }   
-}
-
+    
+    
+    
