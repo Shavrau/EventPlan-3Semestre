@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 835px;
+    height: 840px;
     margin-left: -30px;
     padding-top: 100px;
 }
@@ -186,29 +186,15 @@
     left: 0;
 }
 
-@media only screen and (max-width: 1300px) {
-    .container {
-        height: 785px;
-        margin-left: -30px;
-    }
-}
-
-@media only screen and (max-width: 920px) {
-    .container {
-        height: 822px;
-        margin-left: -30px;
-    }
-}
-
 @media only screen and (max-width: 768px) {
     .container {
-        height: 780px;
+        height: 790px;
         margin-left: -90px;
     }
 
     .passwordVisibilityToggle {
         left: 300px;
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .socialLogin {
@@ -226,6 +212,19 @@
     }
 
     .label {
+        font-size: 20px;
+    }
+
+    .input[type='text'],
+    .input[type='email'],
+    .input[type='password'] {
+        font-size: 20px;
+
+    }
+    
+    .input[type='text']:focus,
+    .input[type='email']:focus,
+    .input[type='password']:focus {
         font-size: 20px;
     }
 
@@ -270,12 +269,13 @@
 
 @media only screen and (max-width: 650px) {
     .container {
-        height: 740px;
+        height: 755px;
         margin-left: -75px;
     }
 
     .passwordVisibilityToggle {
         left: 300px;
+        font-size: 18px;
     }
 
     .socialLogin {
@@ -289,6 +289,19 @@
     }
 
     .label {
+        font-size: 18px;
+    }
+
+    .input[type='text'],
+    .input[type='email'],
+    .input[type='password'] {
+        font-size: 18px;
+
+    }
+    
+    .input[type='text']:focus,
+    .input[type='email']:focus,
+    .input[type='password']:focus {
         font-size: 18px;
     }
 
@@ -334,7 +347,8 @@
     }
 
     .passwordVisibilityToggle {
-        left: 220px;
+        left: 216px;
+        font-size: 16px;
     }
 
     .socialLogin {
@@ -348,6 +362,20 @@
     }
 
     .label {
+        font-size: 16px;
+    }
+
+    
+    .input[type='text'],
+    .input[type='email'],
+    .input[type='password'] {
+        font-size: 16px;
+
+    }
+    
+    .input[type='text']:focus,
+    .input[type='email']:focus,
+    .input[type='password']:focus {
         font-size: 16px;
     }
 
@@ -365,7 +393,7 @@
     .content6 {
         width: 35px;
         height: 35px;
-        top: 70px;
+        top: 94px;
         left: 15px;
         font-size: 0; 
     }
@@ -390,6 +418,25 @@
     }
 }
 
+@media only screen and (max-width: 445px) {
+    .content6 {
+        width: 35px;
+        height: 35px;
+        top: 70px;
+        left: 15px;
+        font-size: 0; 
+    }
+
+    .content6 .iconevoltar {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+        margin-right: 0px;
+        transform: scaleX(-1);
+    }
+}
+
 @media only screen and (max-width: 340px) {
     .container {
         height: 580px;
@@ -397,8 +444,8 @@
     }
 
     .passwordVisibilityToggle {
-        left: 138px;
-        font-size: 20px;
+        left: 130px;
+        font-size: 12px;
     }
 
     .socialLogin {
@@ -412,6 +459,19 @@
     }
 
     .label {
+        font-size: 12px;
+    }
+
+    .input[type='text'],
+    .input[type='email'],
+    .input[type='password'] {
+        font-size: 12px;
+
+    }
+    
+    .input[type='text']:focus,
+    .input[type='email']:focus,
+    .input[type='password']:focus {
         font-size: 12px;
     }
 
@@ -461,8 +521,8 @@
     }
 
     .passwordVisibilityToggle {
-        left: 48px;
-        font-size: 20px;
+        left: 34px;
+        font-size: 7px;
     }
 
     .socialLogin {
@@ -476,6 +536,19 @@
     }
 
     .label {
+        font-size: 7px;
+    }
+
+    .input[type='text'],
+    .input[type='email'],
+    .input[type='password'] {
+        font-size: 7px;
+
+    }
+    
+    .input[type='text']:focus,
+    .input[type='email']:focus,
+    .input[type='password']:focus {
         font-size: 7px;
     }
 
@@ -535,9 +608,8 @@
     }
 
     .passwordVisibilityToggle {
-        left: -40px;
-        font-size: 20px;
-        display: none;
+        left: -58px;
+        font-size: 5px;
     }
 
     .socialLogin {
@@ -553,6 +625,20 @@
     .label {
         font-size: 5px;
     }
+
+    .input[type='text'],
+    .input[type='email'],
+    .input[type='password'] {
+        font-size: 5px;
+
+    }
+    
+    .input[type='text']:focus,
+    .input[type='email']:focus,
+    .input[type='password']:focus {
+        font-size: 5px;
+    }
+
 
     .input {
         width: 10px;

@@ -28,13 +28,11 @@ const About = () => {
             <div className={styles.Nome}>Rhian Mendes Souza</div>
             <img src={Cleston} alt="foto do membro do grupo Cleston" className={styles["foto-sobre"]} />
             <div className={styles.Nome}>Cleston Kenji Maruyama Tonooka</div>
-          <div className={styles.Nome}>
             <img src={Felipe} alt="foto do membro do grupo Felipe" className={styles["foto-sobre"]} />
             <div className={styles.Nome}>Felipe Salgaço Moretti</div>
             <img src={Pedro} alt="foto do membro do grupo Pedro" className={styles["foto-sobre"]} />
             <div className={styles.Nome}>Pedro Henrique Biondi de Carvalho</div>
           </div>  
-        </div>
         <NavLink to="../Home">
           <div className={styles.content6}>
           <FontAwesomeIcon icon="fa-solid fa-right-to-bracket" className={styles.iconevoltar} />

@@ -38,7 +38,7 @@
 }
 
 .index {
-  padding-top: 135px;
+  padding-top: 145px;
   margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -97,7 +97,7 @@
     }
   }
 
-@media only screen and (max-width: 785px) {
+@media only screen and (max-width: 768px) {
 .content6 {
   width: 100px;
   height: 30px;
@@ -129,7 +129,7 @@
 }
     
 .Nome {
-padding-bottom: 10px;
+padding-bottom: 8px;
 font-size: 15px;
   }
 }
@@ -157,7 +157,7 @@ font-size: 15px;
     }
     
     .index .texto-sobre p {
-      font-size: 10.7px;
+      font-size: 10.9px;
     }
   
 
@@ -167,12 +167,12 @@ font-size: 15px;
     }
     
     .Nome {
-      padding-bottom: 7px;
-      font-size: 15px;
+      padding-bottom: 5px;
+      font-size: 14px;
     }
 }
 
-@media only screen and (max-width: 440px) {
+@media only screen and (max-width: 445px) {
     .content6 {
         width: 35px;
         height: 35px;
@@ -232,7 +232,7 @@ font-size: 15px;
 }
 
 .index .texto-sobre p {
-  font-size: 7px;
+  font-size: 6.5px;
 }
 
 .foto-sobre {
@@ -326,7 +326,6 @@ font-size: 15px;
             }
 
     @media only screen and (max-width: 100px) {
-    
       .content6 {
         width: 20px;
         height: 20px;

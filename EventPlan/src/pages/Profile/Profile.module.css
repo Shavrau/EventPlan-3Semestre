@@ -557,7 +557,7 @@ main {
     }
 }
 
-@media only screen and (max-width: 440px) {
+@media only screen and (max-width: 445px) {
     main {
         height: 755px;
         margin: 0; 
@@ -668,24 +668,6 @@ main {
         margin-top: 6%;
         width: calc(33.33% - 9px); 
     }
-}
-
-@media only screen and (max-width: 338px) {
-    .content6 {
-      width: 35px;
-      height: 35px;
-      top: 70px;
-      left: 15px;
-      font-size: 0; 
-  }
-  
-  .content6 .iconevoltar {
-      font-size: 20px;
-      width: 20px;
-      height: 20px;
-      margin-top: 0;
-      margin-right: 0px;
-  }
 }
 
 @media only screen and (max-width: 250px) {
