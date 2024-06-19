@@ -514,7 +514,7 @@
     }
 }
 
-@media only screen and (max-width: 240px) {
+@media only screen and (max-width: 250px) {
     .container {
         height: 570px;
         margin-left: -45px;
