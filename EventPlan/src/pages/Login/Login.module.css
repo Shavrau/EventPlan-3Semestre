@@ -340,7 +340,7 @@
     }
 }
 
-@media only screen and (max-width: 470px) {
+@media only screen and (max-width: 540px) {
     .container {
         height: 730px;
         margin-left: -70px;
@@ -437,7 +437,7 @@
     }
 }
 
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 370px) {
     .container {
         height: 580px;
         margin-left: -45px;
@@ -601,7 +601,7 @@
     margin: 0 5px;
 }
 
-@media only screen and (max-width: 150px) {
+@media only screen and (max-width: 170px) {
     .container {
         height: 480px;
         margin-left: -5px;
@@ -610,6 +610,7 @@
     .passwordVisibilityToggle {
         left: -58px;
         font-size: 5px;
+        display: none;
     }
 
     .socialLogin {
