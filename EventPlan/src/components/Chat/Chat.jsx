@@ -16,7 +16,7 @@ const Chat = ({ eventId }) => {
         onValue(messagesRef.current, (snapshot) => {
           const data = snapshot.val();
           const messagesList = data ? Object.values(data) : [];
-          const limitedMessages = messagesList.slice(-6); // Limitar a 6 mensagens
+          const limitedMessages = messagesList.slice(-6); 
           setMessages(limitedMessages);
         });
       };
@@ -72,8 +72,8 @@ const Chat = ({ eventId }) => {
                 placeholder="Digite sua mensagem..."
               />
               <div className="input-group-append">
-                <button type="submit" className={`btn btn-primary ${styles.button}`}>
-                  Enviar
+                <button type="submit" className={styles.btn} aria-label="Enviar">
+                  ENVIAR
                 </button>
               </div>
             </div>

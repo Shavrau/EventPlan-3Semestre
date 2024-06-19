@@ -85,7 +85,7 @@ const EventRating = ({ eventId }) => {
                 onChange={(e) => setComment(e.target.value)}
                 placeholder="Deixe seu comentário."
             />
-            <button onClick={handleRatingSubmit} className={styles.botao}>Enviar avaliação</button>
+            <button onClick={handleRatingSubmit} className={styles.btn} aria-label="Enviar">ENVIAR</button>
         </div>
     );
 };

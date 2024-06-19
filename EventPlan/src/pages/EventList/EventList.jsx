@@ -36,8 +36,8 @@ const EventList = () => {
 
   return (
     <div className={styles.container}>
-      <DropdownButton id="dropdown-basic-button" title={`Filter: ${filter}`} onSelect={handleSelect} className={styles.dropdown}>
-        <Dropdown.Item eventKey="All">All</Dropdown.Item>
+      <DropdownButton id="dropdown-basic-button" title={`Filtrar: `} onSelect={handleSelect} className={styles.dropdown}>
+        <Dropdown.Item eventKey="All">Todos</Dropdown.Item>
         <Dropdown.Item eventKey="show">Show e Musica</Dropdown.Item>
         <Dropdown.Item eventKey="games">Games e Tecnologia</Dropdown.Item>
         <Dropdown.Item eventKey="comedia">Comedia e StandUp</Dropdown.Item>

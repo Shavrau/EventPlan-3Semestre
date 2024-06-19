@@ -44,7 +44,7 @@ const FavoriteEvents = ({ userId, eventId, eventName }) => {
 
     return (
         <div>
-            <h3>Favorites</h3>
+            <h3>Favoritos</h3>
             <ul>
                 {favorites.map((favorite, index) => (
                     <OverlayTrigger

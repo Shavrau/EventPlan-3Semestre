@@ -26,11 +26,20 @@
 .description,
 .dateVenue,
 .tickets {
-    border-radius: 10px;
     background-color: #C2CAE8;
     padding: 20px;
     margin-bottom: 20px;
+    border: 2px solid #8380B6;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(131, 128, 182, 0.25); 
+    filter: drop-shadow(0 0 1px rgba(131, 128, 182, 1)) drop-shadow(0 4px 4px rgba(131, 128, 182, 0.25));
+    box-sizing: border-box;
 }
+
+.cartIcon{
+    font-size: 30px;
+    color: #000;
+}  
 
 .description p,
 .dateVenue p,
@@ -48,6 +57,11 @@
     height: 90px;
     width: auto;
     padding: 20px;
+    border: 2px solid #8380B6;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(131, 128, 182, 0.25);
+    filter: drop-shadow(0 0 1px rgba(131, 128, 182, 1)) drop-shadow(0 4px 4px rgba(131, 128, 182, 0.25));
+    box-sizing: border-box;
     transition: transform 0.2s ease; 
 }
 
@@ -59,3 +73,30 @@
 .marginTop20 {
     margin-top: 20px;
 }
+
+.btn {
+    width: 100%; 
+    max-width: 240px;
+    height: 60px;
+    background-color: white;
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    font-size: 28px; 
+    font-weight: 600;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    box-sizing: border-box;
+    margin: 0 auto 40px; 
+    transition: transform 0.2s ease;
+  }
+  
+  .btn:hover {
+    transform: scale(1.1);
+  }
