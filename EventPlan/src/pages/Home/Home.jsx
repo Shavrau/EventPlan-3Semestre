@@ -50,7 +50,7 @@ const Home = () => {
         ))}
       </div>
       <div className={styles.verMaisContainer}>
-        <Link to="/EventList" className="btn btn-primary">Ver mais</Link>
+        <Link to="/EventList" className={styles.btn} aria-label="Ver Mais">VER MAIS</Link>
       </div>
     </div>
   );

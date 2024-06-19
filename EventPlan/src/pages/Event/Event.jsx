@@ -15,12 +15,11 @@ const Event = () => {
   const { id } = useParams();
   const [eventData, setEventData] = useState(null);
   const [ratings, setRatings] = useState([]);
-  const [averageRating, setAverageRating] = useState(0); // Inicializa com 0
+  const [averageRating, setAverageRating] = useState(0);
 
   useEffect(() => {
     const fetchEventAndRatings = async () => {
       try {
-        // Fetch event data
         const eventRef = doc(db, 'Eventos', id);
         const eventSnap = await getDoc(eventRef);
         if (eventSnap.exists()) {
@@ -28,14 +27,10 @@ const Event = () => {
         } else {
           console.log('No such document!');
         }
-
-        // Fetch ratings
         const ratingsCollection = collection(db, `Eventos/${id}/ratings`);
         const ratingsSnapshot = await getDocs(ratingsCollection);
         const fetchedRatings = ratingsSnapshot.docs.map(doc => doc.data());
         setRatings(fetchedRatings);
-
-        // Calculate average rating
         const avgRating = calculateAverageRating(fetchedRatings);
         setAverageRating(avgRating);
       } catch (error) {
@@ -52,7 +47,6 @@ const Event = () => {
     }
 
     const totalRating = ratings.reduce((acc, rating) => {
-      // Verifica se rating.rating é um número válido antes de somar
       const validRating = typeof rating.rating === 'number' && !isNaN(rating.rating) ? rating.rating : 0;
       return acc + validRating;
     }, 0);
@@ -95,7 +89,7 @@ const Event = () => {
         </Col>
         <Col md={2}>
           <div className={styles.cartIcon}>
-            <FontAwesomeIcon icon={['fas', 'shopping-cart']} />
+          <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
           </div>
         </Col>
       </Row>

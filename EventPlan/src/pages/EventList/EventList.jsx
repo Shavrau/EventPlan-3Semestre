@@ -9,7 +9,7 @@ const EventList = () => {
   const [events, setEvents] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [eventsPerPage] = useState(5);
-  const [filter, setFilter] = useState('All');
+  const [filter, setFilter] = useState('todos');
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -21,7 +21,7 @@ const EventList = () => {
     fetchEvents();
   }, []);
 
-  const filteredEvents = filter === 'All' ? events : events.filter(event => event.tipo === filter);
+  const filteredEvents = filter === 'todos' ? events : events.filter(event => event.tipo === filter);
 
   const indexOfLastEvent = currentPage * eventsPerPage;
   const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
@@ -36,8 +36,8 @@ const EventList = () => {
 
   return (
     <div className={styles.container}>
-      <DropdownButton id="dropdown-basic-button" title={`Filter: ${filter}`} onSelect={handleSelect} className={styles.dropdown}>
-        <Dropdown.Item eventKey="All">All</Dropdown.Item>
+      <DropdownButton id="dropdown-basic-button" title={`Filtro:${filter}`} onSelect={handleSelect} className={styles.dropdown}>
+        <Dropdown.Item eventKey="todos">Todos</Dropdown.Item>
         <Dropdown.Item eventKey="show">Show e Musica</Dropdown.Item>
         <Dropdown.Item eventKey="games">Games e Tecnologia</Dropdown.Item>
         <Dropdown.Item eventKey="comedia">Comedia e StandUp</Dropdown.Item>
