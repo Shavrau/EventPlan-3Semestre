@@ -299,7 +299,7 @@
         }
     }
     
-    @media only screen and (max-width: 475px) {
+    @media only screen and (max-width: 540px) {
         .container {
             height: 610px;
         }
@@ -413,7 +413,7 @@
         }
     }
     
-    @media only screen and (max-width: 340px) {
+    @media only screen and (max-width: 370px) {
         .container { 
             height: 490px;
             margin-left: -60px;
@@ -540,7 +540,7 @@
             }
     }
     
-    @media only screen and (max-width: 150px) {
+    @media only screen and (max-width: 170px) {
         .container { 
             height: 410px;
             margin-left: -5px;
@@ -549,6 +549,7 @@
         .passwordVisibilityToggle {
             left: -52px;
             font-size: 5px;        
+            display: none;
         }
     
         .label {

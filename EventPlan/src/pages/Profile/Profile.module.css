@@ -132,7 +132,7 @@ main {
     box-shadow: 4px 5px 1px rgba(131, 128, 182, 0.25);
     filter: drop-shadow(0 0 1px rgba(131, 128, 182, 1)) drop-shadow(4px 5px 1px rgba(131, 128, 182, 0.25));
     font-family: 'Inter', sans-serif;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 400;
     color: black;
     display: flex;
@@ -289,7 +289,7 @@ main {
         width: 500px;
         height: 200px;
         top: 55%;
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .content3 {
@@ -400,7 +400,7 @@ main {
         width: 500px;
         height: 200px;
         top: 55%;
-        font-size: 20px;
+        font-size: 17px;
     }
 
     .content3 {
@@ -512,7 +512,7 @@ main {
         width: 261px;
         height: 193px;
         top: 63%;
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .content3 {
@@ -625,7 +625,7 @@ main {
         width: 152px;
         height: 104px;
         top: 72%;
-        font-size: 6.5px;
+        font-size: 6px;
     }
 
     .content3 {
